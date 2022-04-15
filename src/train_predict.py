@@ -1,9 +1,9 @@
 import argparse
 import os
 
-from t5_experiments.eval.conala_eval import calculate_bleu_from_lists
-from t5_experiments.t5_lm import T5LMClassifier
-from t5_experiments.data_processing.utils import read_labels, get_encoded_code_tokens
+from t5_lm import T5LMClassifier
+from data_processing.utils import read_labels, get_encoded_code_tokens
+from eval.conala_eval import calculate_bleu_from_lists
 
 DATA_FOLDER = 'data'
 
@@ -69,14 +69,18 @@ def parse_args():
                         help='the folder/google bucket in which the model will be stored or loaded from.')
     parser.add_argument('--epochs', default=20,
                         help='number of epochs to train')
-    parser.add_argument('--batch-size', default=128,
+    parser.add_argument('--batch-size', default=4,
                         help='batch size')
-    parser.add_argument('--val-batch-size', default=128,
+    parser.add_argument('--val-batch-size', default=4,
                         help='validation batch size')
     parser.add_argument('--lr', default=0.0001,
                         help='learning rate')
     parser.add_argument('--gradient-accumulation', default=1)
-    args = parser.parse_args()
+    try:
+        args = parser.parse_args()
+    except Exception as ex:
+        print(ex)
+        exit()
     return args
 
 
@@ -90,7 +94,7 @@ def main():
                  per_gpu_train_batch_size=int(args.batch_size),
                  epochs=int(args.epochs),
                  learning_rate=float(args.lr),
-                 sequence_length=48,
+                 sequence_length=256,
                  noisy_file=args.noisy_file,
                  language_model=language_model,
                  grad_acc=int(args.gradient_accumulation))
@@ -98,7 +102,7 @@ def main():
             evaluation_results = evaluate(test_file=args.validation_file,
                                       trained_models_dir=args.model_dir,
                                       per_gpu_eval_batch_size=int(args.val_batch_size),
-                                      sequence_length=48,
+                                      sequence_length=256,
                                           language_model=language_model
                                     )
 if __name__ == '__main__':

@@ -1,0 +1,3202 @@
+[
+    {
+        "intent": "Did he take augmentin?",
+        "snippet": "delta(lambda x.has_concept(x, 'augmentin', pmh))"
+    },
+    {
+        "intent": "When was she first tested for lipids?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'tested for lipids', pmh)))"
+    },
+    {
+        "intent": "When was the epinephrine auto-injector prescribed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'epinephrine auto-injector', pmh)))"
+    },
+    {
+        "intent": "Did the patient take meningococcal vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'meningococcal vaccine', pmh))"
+    },
+    {
+        "intent": "What was the result of fecal occult blood test?",
+        "snippet": "latest(lambda x.has_concept(x, 'fecal occult blood test', history))"
+    },
+    {
+        "intent": "How many days did he suffer from sore throat?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'sore throat', history)))"
+    },
+    {
+        "intent": "When was the Tdap administered?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Tdap', pmh)))"
+    },
+    {
+        "intent": "Did she have testing done for basic metabolic panel after 2010?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'basic metabolic panel', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "Show me the results of all his lipid panels.",
+        "snippet": "lambda x.has_concept(x, 'lipid panels', history), "
+    },
+    {
+        "intent": "Has her Hemoglobin A1c gone greater than 6% in the past 10 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'Hemoglobin A1c', history), greater_than(x, '6%'), time_within(x, 'in the past 10 years')))"
+    },
+    {
+        "intent": "What is the self care plan about?",
+        "snippet": "latest(lambda x.has_concept(x, 'self care', history))"
+    },
+    {
+        "intent": "Did he sprain the ankle?",
+        "snippet": "delta(lambda x.has_concept(x, 'sprain the ankle', history))"
+    },
+    {
+        "intent": "When did she first have a standard pregnancy test?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'standard pregnancy test', pmh)))"
+    },
+    {
+        "intent": "How long was she cared for fracture?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'cared for fracture', pmh)))"
+    },
+    {
+        "intent": "When was he diagnosed with Diabetes?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Diabetes', pmh)))"
+    },
+    {
+        "intent": "When was the Hep B vaccine started?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'Hep B vaccine', history)))"
+    },
+    {
+        "intent": "When was the death certification issued?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'death certification', history)))"
+    },
+    {
+        "intent": "When did she last come for her asthma follow-up?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'asthma follow-up', pmh)))"
+    },
+    {
+        "intent": "What was the highest BMI?",
+        "snippet": "max(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "How many days did he suffer from viral pharyngitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'viral pharyngitis', history)))"
+    },
+    {
+        "intent": "How long was she cared for fracture?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'cared for fracture', pmh)))"
+    },
+    {
+        "intent": "Does he have any history of appendectomy?",
+        "snippet": "delta(lambda x.has_concept(x, 'history of appendectomy', pmh))"
+    },
+    {
+        "intent": "How many times did she come for her prenatal visits?",
+        "snippet": "count(lambda x.has_concept(x, 'prenatal visits', history))"
+    },
+    {
+        "intent": "Was lipid checked in 2013?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'lipid checked', pmh), time_within(x, 'in 2013')))"
+    },
+    {
+        "intent": "Did she get vaccinated with pneumococcal conjugate?",
+        "snippet": "delta(lambda x.has_concept(x, 'pneumococcal conjugate', pmh))"
+    },
+    {
+        "intent": "When was her most recent asthma follow-up?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'asthma follow-up', pmh)))"
+    },
+    {
+        "intent": "How was the honey bee IgE antibody in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'honey bee IgE antibody in serum', history))"
+    },
+    {
+        "intent": "Is his self management plan for diabetes still active?",
+        "snippet": "delta(lambda x.has_concept(x, 'self management plan for diabetes', status))"
+    },
+    {
+        "intent": "When did she have concussion with loss of consciousness?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'concussion with loss of consciousness', pmh)))"
+    },
+    {
+        "intent": "Does he have history of appendectomy?",
+        "snippet": "delta(lambda x.has_concept(x, 'history of appendectomy', pmh))"
+    },
+    {
+        "intent": "When was the last time he was immunized with a pneumococcal polysaccharide vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'pneumococcal polysaccharide vaccine', pmh)))"
+    },
+    {
+        "intent": "Was the patient's LDL ever above 100?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'LDL', history), greater_than(x, '100')))"
+    },
+    {
+        "intent": "What is the count of flu vaccines given after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'flu vaccines', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "What are the results of her basic metabolic panel?",
+        "snippet": "latest(lambda x.has_concept(x, 'basic metabolic panel', history))"
+    },
+    {
+        "intent": "What are the details of her first allergy screening test?",
+        "snippet": "earliest(lambda x.has_concept(x, 'allergy screening test', pmh))"
+    },
+    {
+        "intent": "Has the total cholesterol dropped?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'total cholesterol', history))"
+    },
+    {
+        "intent": "What is the status of his animal dander allergy?",
+        "snippet": "latest(lambda x.has_concept(x, 'animal dander allergy', status))"
+    },
+    {
+        "intent": "How is his height trending?",
+        "snippet": "trend(lambda x.has_concept(x, 'height', history))"
+    },
+    {
+        "intent": "How long did she suffer from viral sinusitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'viral sinusitis', pmh)))"
+    },
+    {
+        "intent": "What is the goal glucose in blood?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal glucose in blood', plan))"
+    },
+    {
+        "intent": "When did we first perform an allergy screening test?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'allergy screening test', pmh)))"
+    },
+    {
+        "intent": "Did the BMI go below 30 in the past 2 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'BMI', history), less_than(x, '30'), time_within(x, 'in the past 2 years')))"
+    },
+    {
+        "intent": "What was her DXA bone density in 2008?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'DXA bone density', pmh), time_within(x, 'in 2008')))"
+    },
+    {
+        "intent": "When was he first seen in outpatient?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'seen in outpatient', pmh)))"
+    },
+    {
+        "intent": "What is the day and time of physical therapy procedure?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'physical therapy procedure', pmh)))"
+    },
+    {
+        "intent": "For how long did he have viral pharyngitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'viral pharyngitis', pmh)))"
+    },
+    {
+        "intent": "What is her quality adjusted life years score?",
+        "snippet": "latest(lambda x.has_concept(x, 'quality adjusted life years score', history))"
+    },
+    {
+        "intent": "How low did her microalbumin creatinine ratio reach?",
+        "snippet": "min(lambda x.has_concept(x, 'microalbumin creatinine ratio', history))"
+    },
+    {
+        "intent": "What is the trend of his urea nitrogen level?",
+        "snippet": "trend(lambda x.has_concept(x, 'urea nitrogen level', history))"
+    },
+    {
+        "intent": "When was the last time she had normal pregnancy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'normal pregnancy', pmh)))"
+    },
+    {
+        "intent": "How many times did she have her Basic Metabolic panel in the last 5 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'Basic Metabolic panel', history), time_within(x, 'in the last 5 years')))"
+    },
+    {
+        "intent": "When was the chronic sinusitis diagnosed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'chronic sinusitis', pmh)))"
+    },
+    {
+        "intent": "When did she last receive the DTaP vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'DTaP vaccine', pmh)))"
+    },
+    {
+        "intent": "What is his earliest BMI?",
+        "snippet": "earliest(lambda x.has_concept(x, 'BMI', pmh))"
+    },
+    {
+        "intent": "When did she come for any encounter for symptom?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'encounter for symptom', pmh)))"
+    },
+    {
+        "intent": "Has his calcium level ever been less than 9 mg/dl?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'calcium level', history), less_than(x, '9 mg/dl')))"
+    },
+    {
+        "intent": "What is his t-score?",
+        "snippet": "latest(lambda x.has_concept(x, 't-score', history))"
+    },
+    {
+        "intent": "When was the patient last seen in outpatient encounter?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'seen in outpatient encounter', pmh)))"
+    },
+    {
+        "intent": "When did she have depo provera injection?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'depo provera injection', pmh)))"
+    },
+    {
+        "intent": "When was the first diabetes management plan assigned?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'diabetes management plan', pmh)))"
+    },
+    {
+        "intent": "How much did he weigh in the last measurement?",
+        "snippet": "latest(lambda x.has_concept(x, 'weigh', history))"
+    },
+    {
+        "intent": "Was she ever admitted to the emergency room in the past 3 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'admitted to the emergency room', pmh), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "How many instances of otitis media were encountered in the last 3 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'otitis media', history), time_within(x, 'in the last 3 years')))"
+    },
+    {
+        "intent": "What is the dose of latest acetaminophen?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'acetaminophen', history)))"
+    },
+    {
+        "intent": "When did the carbon dioxide level in blood go below 23?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'carbon dioxide level in blood', history), less_than(x, '23'))))"
+    },
+    {
+        "intent": "When was he started on acetaminophen?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'acetaminophen', pmh)))"
+    },
+    {
+        "intent": "Where was the polyp found?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'polyp', history)))"
+    },
+    {
+        "intent": "How are the chloride levels in her blood?",
+        "snippet": "lambda x.has_concept(x, 'chloride levels in her blood', history), "
+    },
+    {
+        "intent": "How many times was she seen in outpatient setting in 2017?",
+        "snippet": "count(lambda x.and(has_concept(x, 'seen in outpatient setting', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "Has he gained weight?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "What part had laceration?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'laceration', history)))"
+    },
+    {
+        "intent": "When did we last collected information from the patient?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'collected information', pmh)))"
+    },
+    {
+        "intent": "When was he last measured for his height?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'height', pmh)))"
+    },
+    {
+        "intent": "Has his chloride level ever been less than 105 mmol/l?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'chloride level', history), less_than(x, '105 mmol/l')))"
+    },
+    {
+        "intent": "Has the blood glucose been greater than 75 mg/dl?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'blood glucose', history), greater_than(x, '75 mg/dl')))"
+    },
+    {
+        "intent": "What are the details of her past MMR vaccines?",
+        "snippet": "lambda x.has_concept(x, 'MMR vaccines', pmh), "
+    },
+    {
+        "intent": "What was her least height?",
+        "snippet": "min(lambda x.has_concept(x, 'height', history))"
+    },
+    {
+        "intent": "Where did the sprain happen in 2014?",
+        "snippet": "location(latest(lambda x.and(has_concept(x, 'sprain', pmh), time_within(x, 'in 2014'))))"
+    },
+    {
+        "intent": "Are there any signs of abuse?",
+        "snippet": "latest(lambda x.has_concept(x, 'signs of abuse', history))"
+    },
+    {
+        "intent": "Does he have a history of cardiac arrest?",
+        "snippet": "delta(lambda x.has_concept(x, 'history of cardiac arrest', pmh))"
+    },
+    {
+        "intent": "Were triglycerides tested for this patient?",
+        "snippet": "delta(lambda x.has_concept(x, 'triglycerides', history))"
+    },
+    {
+        "intent": "Did she come for any treatment consultation in the last 2 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'treatment consultation', pmh), time_within(x, 'in the last 2 years')))"
+    },
+    {
+        "intent": "How much is the American house dust mite IgE antibodies in Serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'American house dust mite IgE antibodies in Serum', history))"
+    },
+    {
+        "intent": "What was the maximum body mass index she ever had?",
+        "snippet": "max(lambda x.has_concept(x, 'body mass index', history))"
+    },
+    {
+        "intent": "What is her lowest measured total cholesterol level?",
+        "snippet": "min(lambda x.has_concept(x, 'total cholesterol', history))"
+    },
+    {
+        "intent": "How has the results of his shrimp IgE antibody in serum been?",
+        "snippet": "trend(lambda x.has_concept(x, 'shrimp IgE antibody in serum', history))"
+    },
+    {
+        "intent": "What was the highest measured Triglyceride level?",
+        "snippet": "max(lambda x.has_concept(x, 'Triglyceride', history))"
+    },
+    {
+        "intent": "How long was he on physical therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'physical therapy', pmh)))"
+    },
+    {
+        "intent": "Was she admitted to Orthopedic department?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted to Orthopedic department', pmh))"
+    },
+    {
+        "intent": "How many influenza vaccines are given since 2014?",
+        "snippet": "count(lambda x.and(has_concept(x, 'influenza vaccines', history), time_within(x, 'since 2014')))"
+    },
+    {
+        "intent": "Is he losing weight?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "When was his cladosporium herbarum IgE Ab tested?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'cladosporium herbarum IgE Ab', pmh)))"
+    },
+    {
+        "intent": "When did she deliver the child?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'deliver the child', pmh)))"
+    },
+    {
+        "intent": "What date was the recent Acetaminophen given?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Acetaminophen', pmh)))"
+    },
+    {
+        "intent": "Is he allergic to house dust mite?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to house dust mite', status))"
+    },
+    {
+        "intent": "Was he given HPV vaccination in 2008?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'HPV', pmh), time_within(x, 'in 2008')))"
+    },
+    {
+        "intent": "What was the dose of earliest Penicillin V Potassium?",
+        "snippet": "dose(earliest(lambda x.has_concept(x, 'Penicillin V Potassium', pmh)))"
+    },
+    {
+        "intent": "Why was his sputum examined?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'sputum examined', pmh)))"
+    },
+    {
+        "intent": "How many times was she diagnosed with acute viral pharyngitis?",
+        "snippet": "count(lambda x.has_concept(x, 'acute viral pharyngitis', history))"
+    },
+    {
+        "intent": "Was he managed for angina?",
+        "snippet": "delta(lambda x.has_concept(x, 'managed for angina', pmh))"
+    },
+    {
+        "intent": "When was he diagnosed with Streptococcal sore throat?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Streptococcal sore throat', pmh)))"
+    },
+    {
+        "intent": "When did we last measure the codfish IgE antibody in serum?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'codfish IgE antibody in serum', pmh)))"
+    },
+    {
+        "intent": "Did she have a tetanus shot?",
+        "snippet": "delta(lambda x.has_concept(x, 'tetanus shot', pmh))"
+    },
+    {
+        "intent": "Why was he prescribed acetaminophen?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'acetaminophen', pmh)))"
+    },
+    {
+        "intent": "How long did the respiratory therapy last?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "Is he allergic to eggs?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to eggs', status))"
+    },
+    {
+        "intent": "When did she last receive the Td vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Td vaccine', pmh)))"
+    },
+    {
+        "intent": "Is he vaccinated for flu?",
+        "snippet": "delta(lambda x.has_concept(x, 'vaccinated for flu', history))"
+    },
+    {
+        "intent": "When was the lipid panel report issued?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'lipid panel report', history)))"
+    },
+    {
+        "intent": "How long did he suffer from contact dermatitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'contact dermatitis', pmh)))"
+    },
+    {
+        "intent": "When was he first seen in outpatient?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'seen in outpatient', pmh)))"
+    },
+    {
+        "intent": "When did she develop osteoarthritis of hip?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'osteoarthritis of hip', pmh)))"
+    },
+    {
+        "intent": "How often does she visit for her asthma follow-ups?",
+        "snippet": "count(lambda x.has_concept(x, 'asthma follow-ups', history))"
+    },
+    {
+        "intent": "When did they perform the rectal polypectomy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'rectal polypectomy', pmh)))"
+    },
+    {
+        "intent": "What is his latest body mass index?",
+        "snippet": "latest(lambda x.has_concept(x, 'body mass index', history))"
+    },
+    {
+        "intent": "For how long did she undergo the respiratory therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "Was he vaccinated for IPV?",
+        "snippet": "delta(lambda x.has_concept(x, 'IPV', pmh))"
+    },
+    {
+        "intent": "What is the dose of Penicillin V Potassium?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Penicillin V Potassium', history)))"
+    },
+    {
+        "intent": "What are the details of her impacted molars?",
+        "snippet": "latest(lambda x.has_concept(x, 'impacted molars', pmh))"
+    },
+    {
+        "intent": "What is his latest BP?",
+        "snippet": "latest(lambda x.has_concept(x, 'BP', history))"
+    },
+    {
+        "intent": "When did the respiratory therapy end?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "When was his last flu vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'flu vaccine', pmh)))"
+    },
+    {
+        "intent": "When was the problem with her molars detected?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'problem with her molars', pmh)))"
+    },
+    {
+        "intent": "When was the subcutaneous immunotherapy started?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'subcutaneous immunotherapy', pmh)))"
+    },
+    {
+        "intent": "What was the first BMI noted?",
+        "snippet": "earliest(lambda x.has_concept(x, 'BMI', pmh))"
+    },
+    {
+        "intent": "When was she diagnosed with diabetic retinopathy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'diabetic retinopathy', pmh)))"
+    },
+    {
+        "intent": "When did he last get a Colonoscopy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Colonoscopy', pmh)))"
+    },
+    {
+        "intent": "How many times were his open wound sutured?",
+        "snippet": "count(lambda x.has_concept(x, 'open wound sutured', history))"
+    },
+    {
+        "intent": "How high was the HDL Cholesterol?",
+        "snippet": "max(lambda x.has_concept(x, 'HDL Cholesterol', history))"
+    },
+    {
+        "intent": "When was the amoxicillin prescribed last?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'amoxicillin', pmh)))"
+    },
+    {
+        "intent": "What is his potassium level?",
+        "snippet": "latest(lambda x.has_concept(x, 'potassium level', history))"
+    },
+    {
+        "intent": "When was the allergic disorder monitoring ended for this patient?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'allergic disorder monitoring', pmh)))"
+    },
+    {
+        "intent": "Has he had any bone density scan?",
+        "snippet": "delta(lambda x.has_concept(x, 'bone density scan', history))"
+    },
+    {
+        "intent": "Why was his sputum examined?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'sputum examined', pmh)))"
+    },
+    {
+        "intent": "When was the induced abortion performed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'induced abortion', pmh)))"
+    },
+    {
+        "intent": "When was he diagnosed with prediabetes?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'prediabetes', pmh)))"
+    },
+    {
+        "intent": "Is she diabetic?",
+        "snippet": "delta(lambda x.has_concept(x, 'diabetic', status))"
+    },
+    {
+        "intent": "What is goal value for hemoglobin A1c total in Blood?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal value for hemoglobin A1c total in Blood', plan))"
+    },
+    {
+        "intent": "What is her self care plan about?",
+        "snippet": "latest(lambda x.has_concept(x, 'self care plan', history))"
+    },
+    {
+        "intent": "When did she last get the flu shot?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'flu shot', pmh)))"
+    },
+    {
+        "intent": "Why was she given a tetanus antitoxin injection?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'tetanus antitoxin injection', pmh)))"
+    },
+    {
+        "intent": "How long did he have acute viral pharyngitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'acute viral pharyngitis', pmh)))"
+    },
+    {
+        "intent": "How many times did she have normal pregnancy?",
+        "snippet": "count(lambda x.has_concept(x, 'normal pregnancy', pmh))"
+    },
+    {
+        "intent": "How many consultations for treatment did the patient have after 2007?",
+        "snippet": "count(lambda x.and(has_concept(x, 'consultations for treatment', history), time_within(x, 'after 2007')))"
+    },
+    {
+        "intent": "What is his goal for Hemoglobin A1c in blood?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal for Hemoglobin A1c in blood', plan))"
+    },
+    {
+        "intent": "When was the skin care started?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'skin care', pmh)))"
+    },
+    {
+        "intent": "When was his second degree burn healed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'second degree burn', pmh)))"
+    },
+    {
+        "intent": "When was the dextromethorphan hydrobromide prescribed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'dextromethorphan hydrobromide', pmh)))"
+    },
+    {
+        "intent": "Has she previously had a cesarean section?",
+        "snippet": "delta(lambda x.has_concept(x, 'cesarean section', pmh))"
+    },
+    {
+        "intent": "Where was the fracture in 2012?",
+        "snippet": "location(latest(lambda x.and(has_concept(x, 'fracture', pmh), time_within(x, 'in 2012'))))"
+    },
+    {
+        "intent": "Did she have a stroke?",
+        "snippet": "delta(lambda x.has_concept(x, 'stroke', pmh))"
+    },
+    {
+        "intent": "What are his triglyceride levels?",
+        "snippet": "latest(lambda x.has_concept(x, 'triglyceride levels', history))"
+    },
+    {
+        "intent": "How many days did the first fracture care last?",
+        "snippet": "duration(earliest(lambda x.has_concept(x, 'fracture care', pmh)))"
+    },
+    {
+        "intent": "Was she diagnosed with perennial allergic rhinitis?",
+        "snippet": "delta(lambda x.has_concept(x, 'perennial allergic rhinitis', pmh))"
+    },
+    {
+        "intent": "Does he have cystitis?",
+        "snippet": "delta(lambda x.has_concept(x, 'cystitis', status))"
+    },
+    {
+        "intent": "What are the details of his basic metabolic panel?",
+        "snippet": "latest(lambda x.has_concept(x, 'basic metabolic panel', history))"
+    },
+    {
+        "intent": "What were the details of her wound care plan?",
+        "snippet": "latest(lambda x.has_concept(x, 'wound care plan', pmh))"
+    },
+    {
+        "intent": "Which year was his respiratory function measured?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'respiratory function', pmh)))"
+    },
+    {
+        "intent": "When was the last t score measured?",
+        "snippet": "time(latest(lambda x.has_concept(x, 't score', pmh)))"
+    },
+    {
+        "intent": "What is the status of nexplanon drug implant?",
+        "snippet": "latest(lambda x.has_concept(x, 'nexplanon drug implant', status))"
+    },
+    {
+        "intent": "Where was the sprain?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'sprain', history)))"
+    },
+    {
+        "intent": "How many times was he seen in emergency room after 2012?",
+        "snippet": "count(lambda x.and(has_concept(x, 'seen in emergency room', history), time_within(x, 'after 2012')))"
+    },
+    {
+        "intent": "Where was the polyp removed from?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'polyp removed', history)))"
+    },
+    {
+        "intent": "What was the cause of her death?",
+        "snippet": "latest(lambda x.has_concept(x, 'cause of her death', history))"
+    },
+    {
+        "intent": "When was the allergic disorder monitoring completed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'allergic disorder monitoring', pmh)))"
+    },
+    {
+        "intent": "What is the dose of his Meperidine HCL?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Meperidine HCL', history)))"
+    },
+    {
+        "intent": "Was she given flu shot in 2017?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'flu shot', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "When was the metformin hydrochloride ordered?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'metformin hydrochloride', pmh)))"
+    },
+    {
+        "intent": "What was her immune response to walnut?",
+        "snippet": "latest(lambda x.has_concept(x, 'immune response to walnut', history))"
+    },
+    {
+        "intent": "What are the details of her stroke?",
+        "snippet": "latest(lambda x.has_concept(x, 'stroke', pmh))"
+    },
+    {
+        "intent": "Was she ever seen in an outpatient setting?",
+        "snippet": "delta(lambda x.has_concept(x, 'seen in an outpatient setting', pmh))"
+    },
+    {
+        "intent": "When was the subcutaneous immunotherapy last performed in 2008?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'subcutaneous immunotherapy', pmh), time_within(x, 'in 2008'))))"
+    },
+    {
+        "intent": "Was she admitted to Emergency room in 2011?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'admitted to Emergency room', pmh), time_within(x, 'in 2011')))"
+    },
+    {
+        "intent": "How often was the Erin 28 prescribed?",
+        "snippet": "count(lambda x.has_concept(x, 'Erin 28', history))"
+    },
+    {
+        "intent": "Where was the laceration?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'laceration', history)))"
+    },
+    {
+        "intent": "When did the alzheimer's disease start?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'alzheimer''s disease', pmh)))"
+    },
+    {
+        "intent": "What is the value of wheat IgE antibody in Serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'wheat IgE antibody in Serum', history))"
+    },
+    {
+        "intent": "Did she develop colon polyps?",
+        "snippet": "delta(lambda x.has_concept(x, 'colon polyps', history))"
+    },
+    {
+        "intent": "Has she lost weight?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "When was his last lipid panel?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'lipid panel', pmh)))"
+    },
+    {
+        "intent": "When was the first time she had an encounter for asthma?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'encounter for asthma', pmh)))"
+    },
+    {
+        "intent": "Why was she on wound care?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'wound care', pmh)))"
+    },
+    {
+        "intent": "Did she have Cesarean section?",
+        "snippet": "delta(lambda x.has_concept(x, 'Cesarean section', pmh))"
+    },
+    {
+        "intent": "Was she on Penicillin V Potassium?",
+        "snippet": "delta(lambda x.has_concept(x, 'Penicillin V Potassium', pmh))"
+    },
+    {
+        "intent": "How many times has she been admitted to the emergency room?",
+        "snippet": "count(lambda x.has_concept(x, 'admitted to the emergency room', history))"
+    },
+    {
+        "intent": "When was the initial assessment for his allergic disorder?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'initial assessment for his allergic disorder', pmh)))"
+    },
+    {
+        "intent": "What is the goal for blood pressure?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal for blood pressure', plan))"
+    },
+    {
+        "intent": "Did he have quality adjusted life years measured?",
+        "snippet": "delta(lambda x.has_concept(x, 'quality adjusted life years', pmh))"
+    },
+    {
+        "intent": "How many times was she seen for a symptom?",
+        "snippet": "count(lambda x.has_concept(x, 'seen for a symptom', history))"
+    },
+    {
+        "intent": "Is her weight increasing?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "How long did he suffer from sprain of ankle?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'sprain of ankle', pmh)))"
+    },
+    {
+        "intent": "What are the details of her skin condition care plan?",
+        "snippet": "latest(lambda x.has_concept(x, 'skin condition care plan', history))"
+    },
+    {
+        "intent": "What led to his death?",
+        "snippet": "latest(lambda x.has_concept(x, 'led to his death', history))"
+    },
+    {
+        "intent": "How many times was the lipid panel test performed?",
+        "snippet": "count(lambda x.has_concept(x, 'lipid panel', history))"
+    },
+    {
+        "intent": "Did she have any case of premature birth?",
+        "snippet": "delta(lambda x.has_concept(x, 'premature birth', pmh))"
+    },
+    {
+        "intent": "How many times was spirometry performed in the last 10 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'spirometry', history), time_within(x, 'in the last 10 years')))"
+    },
+    {
+        "intent": "What was the minimum urea nitrogen level?",
+        "snippet": "min(lambda x.has_concept(x, 'urea nitrogen level', history))"
+    },
+    {
+        "intent": "What percentage of head and neck is affected by eczema?",
+        "snippet": "latest(lambda x.has_concept(x, 'percentage of head and neck is affected by eczema', history))"
+    },
+    {
+        "intent": "When was the first consultation for treatment?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'consultation for treatment', pmh)))"
+    },
+    {
+        "intent": "Is she prediabetic?",
+        "snippet": "delta(lambda x.has_concept(x, 'prediabetic', status))"
+    },
+    {
+        "intent": "What is his latest BMI?",
+        "snippet": "latest(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "Is she still on penicillin V potassium?",
+        "snippet": "delta(lambda x.has_concept(x, 'penicillin V potassium', status))"
+    },
+    {
+        "intent": "Is she still taking the simvastatin medication?",
+        "snippet": "delta(lambda x.has_concept(x, 'simvastatin medication', status))"
+    },
+    {
+        "intent": "Has the HbA1c been greater than 6?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'HbA1c', history), greater_than(x, '6')))"
+    },
+    {
+        "intent": "Was he ever admitted in emergency room?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted in emergency room', pmh))"
+    },
+    {
+        "intent": "What was her minimum triglycerides level?",
+        "snippet": "min(lambda x.has_concept(x, 'triglycerides level', history))"
+    },
+    {
+        "intent": "How many times was she prescribed the errin 28 day pack?",
+        "snippet": "count(lambda x.has_concept(x, 'errin 28 day pack', history))"
+    },
+    {
+        "intent": "How many times was she diagnosed with polyp of colon in the past 4 decades?",
+        "snippet": "count(lambda x.and(has_concept(x, 'polyp of colon', history), time_within(x, 'in the past 4 decades')))"
+    },
+    {
+        "intent": "When did she first consult for treatment?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'consult for treatment', pmh)))"
+    },
+    {
+        "intent": "What is the dose of Simvastatin oral tablet?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Simvastatin oral tablet', history)))"
+    },
+    {
+        "intent": "Is his contact dermatitis resolved?",
+        "snippet": "is_healed(latest(lambda x.has_concept(x, 'contact dermatitis', history)))"
+    },
+    {
+        "intent": "Was the acute bronchitis resolved?",
+        "snippet": "is_healed(latest(lambda x.has_concept(x, 'acute bronchitis', history)))"
+    },
+    {
+        "intent": "When was the last amoxicillin oral tablet given?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'amoxicillin oral tablet', pmh)))"
+    },
+    {
+        "intent": "When was his recent flu vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'flu vaccine', history)))"
+    },
+    {
+        "intent": "When was the most recent metabolic panel done?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'metabolic panel', history)))"
+    },
+    {
+        "intent": "When was he first admitted in emergency room?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'admitted in emergency room', pmh)))"
+    },
+    {
+        "intent": "Did the patient have stroke?",
+        "snippet": "delta(lambda x.has_concept(x, 'stroke', pmh))"
+    },
+    {
+        "intent": "How often was bone immobilized after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'bone immobilized', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "Is she hypertensive?",
+        "snippet": "delta(lambda x.has_concept(x, 'hypertensive', status))"
+    },
+    {
+        "intent": "Did we ever test for the shrimp IgE antibodies in serum?",
+        "snippet": "delta(lambda x.has_concept(x, 'shrimp IgE antibodies in serum', pmh))"
+    },
+    {
+        "intent": "What is the trend for weight?",
+        "snippet": "trend(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "Did she have any obstetric emergencies?",
+        "snippet": "delta(lambda x.has_concept(x, 'obstetric emergencies', pmh))"
+    },
+    {
+        "intent": "When did she get hypertensive?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'hypertensive', pmh)))"
+    },
+    {
+        "intent": "When did we measure the respiratory function?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'measure the respiratory function', pmh)))"
+    },
+    {
+        "intent": "How is his blood pressure varying?",
+        "snippet": "trend(lambda x.has_concept(x, 'blood pressure', history))"
+    },
+    {
+        "intent": "How many times did he come for an outpatient visit in the last 5 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'outpatient visit', history), time_within(x, 'in the last 5 years')))"
+    },
+    {
+        "intent": "When was the first MMR vaccine administered?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'MMR vaccine', pmh)))"
+    },
+    {
+        "intent": "What is the trend of triglycerides after 2009?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'triglycerides', history), time_within(x, 'after 2009')))"
+    },
+    {
+        "intent": "How many times has she been prescribed nexplanon drug implant?",
+        "snippet": "count(lambda x.has_concept(x, 'nexplanon drug implant', history))"
+    },
+    {
+        "intent": "How many times is she given the Hib PRP-OMP vaccine?",
+        "snippet": "count(lambda x.has_concept(x, 'Hib PRP-OMP vaccine', history))"
+    },
+    {
+        "intent": "Where did he have laceration?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'laceration', history)))"
+    },
+    {
+        "intent": "Was there any medical induction of labor?",
+        "snippet": "delta(lambda x.has_concept(x, 'medical induction of labor', pmh))"
+    },
+    {
+        "intent": "What was her highest BMI?",
+        "snippet": "max(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "How long was he on the respiratory therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "Why did the encounter for checkup happen in 2015?",
+        "snippet": "reason(latest(lambda x.and(has_concept(x, 'encounter for checkup', pmh), time_within(x, 'in 2015'))))"
+    },
+    {
+        "intent": "How many times did she have musculoskeletal care?",
+        "snippet": "count(lambda x.has_concept(x, 'musculoskeletal care', history))"
+    },
+    {
+        "intent": "What does his respiratory therapy include?",
+        "snippet": "latest(lambda x.has_concept(x, 'respiratory therapy', history))"
+    },
+    {
+        "intent": "What was his highest hemoglobin A1c in the last 3 years?",
+        "snippet": "max(lambda x.and(has_concept(x, 'hemoglobin A1c', history), time_within(x, 'in the last 3 years')))"
+    },
+    {
+        "intent": "What was his blood pressure in 2017?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'blood pressure', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "Has his sodium level ever been less than 140 mmol/l?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'sodium level', history), less_than(x, '140 mmol/l')))"
+    },
+    {
+        "intent": "When was the bilateral tubal ligation performed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'bilateral tubal ligation', pmh)))"
+    },
+    {
+        "intent": "How many times did he suffer from otitis media after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'otitis media', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "What is the dose of Simvastatin?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Simvastatin', history)))"
+    },
+    {
+        "intent": "Did he anytime have appendicitis?",
+        "snippet": "delta(lambda x.has_concept(x, 'appendicitis', pmh))"
+    },
+    {
+        "intent": "Are his triglycerides getting low?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'triglycerides', history))"
+    },
+    {
+        "intent": "Did he follow up for his allergy disorder?",
+        "snippet": "delta(lambda x.has_concept(x, 'follow up for his allergy disorder', pmh))"
+    },
+    {
+        "intent": "When was he diagnosed with epilepsy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'epilepsy', pmh)))"
+    },
+    {
+        "intent": "How many times did she have colonoscopy done?",
+        "snippet": "count(lambda x.has_concept(x, 'colonoscopy', history))"
+    },
+    {
+        "intent": "Did he receive Nitroglycerin after 1959?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'Nitroglycerin', pmh), time_within(x, 'after 1959')))"
+    },
+    {
+        "intent": "What is the trend of body weight after 2010?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'body weight', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "What are the results of his throat culture?",
+        "snippet": "latest(lambda x.has_concept(x, 'throat culture', history))"
+    },
+    {
+        "intent": "Did she have miscarriage in second trimester?",
+        "snippet": "delta(lambda x.has_concept(x, 'miscarriage in second trimester', pmh))"
+    },
+    {
+        "intent": "How many times did she come for treatment consultation in the last 5 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'come for treatment consultation', history), time_within(x, 'in the last 5 years')))"
+    },
+    {
+        "intent": "Why is he on wound care?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'wound care', history)))"
+    },
+    {
+        "intent": "What is her latest HDL Cholesterol?",
+        "snippet": "latest(lambda x.has_concept(x, 'HDL Cholesterol', history))"
+    },
+    {
+        "intent": "What was the disability rating scale in 2017?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'disability rating scale', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "How many times was he tested for American house dust mite Immunoglobulin E antibody in Serum?",
+        "snippet": "count(lambda x.has_concept(x, 'American house dust mite Immunoglobulin E antibody in Serum', history))"
+    },
+    {
+        "intent": "Where did the patient have his osteoarthritis?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'osteoarthritis', history)))"
+    },
+    {
+        "intent": "What was the time of his death certification?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'death certification', history)))"
+    },
+    {
+        "intent": "What is the dose of Mirena Intrauterine system?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Mirena Intrauterine system', history)))"
+    },
+    {
+        "intent": "When did she have her earliest glomerular filteration rate measurement?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'glomerular filteration rate', pmh)))"
+    },
+    {
+        "intent": "Does she have osteoporosis?",
+        "snippet": "delta(lambda x.has_concept(x, 'osteoporosis', status))"
+    },
+    {
+        "intent": "How many times were current medications documented after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'current medications documented', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "Why was she seen for check up?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'seen for check up', pmh)))"
+    },
+    {
+        "intent": "When was she started on trinessa medication?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'trinessa medication', pmh)))"
+    },
+    {
+        "intent": "What is the dose of acetaminophen?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'acetaminophen', history)))"
+    },
+    {
+        "intent": "Has the estimated glomerular filtration rate ever been below 90 in the past 1 year?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'estimated glomerular filtration rate', history), less_than(x, '90'), time_within(x, 'in the past 1 year')))"
+    },
+    {
+        "intent": "When was she found to have allergy to peanuts?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'allergy to peanuts', pmh)))"
+    },
+    {
+        "intent": "Does the patient have any history of Otitis media?",
+        "snippet": "delta(lambda x.has_concept(x, 'Otitis media', history))"
+    },
+    {
+        "intent": "When was he last admitted to Emergency room?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'admitted to Emergency room', pmh)))"
+    },
+    {
+        "intent": "How is his honey bee IgE Ab in Serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'honey bee IgE Ab in Serum', history))"
+    },
+    {
+        "intent": "Did she go through an insertion of any intrauterine contraceptive device?",
+        "snippet": "delta(lambda x.has_concept(x, 'insertion of any intrauterine contraceptive device', pmh))"
+    },
+    {
+        "intent": "Has the hemoglobin A1c levels decreased in the past 2 years?",
+        "snippet": "is_decreasing(lambda x.and(has_concept(x, 'hemoglobin A1c levels', history), time_within(x, 'in the past 2 years')))"
+    },
+    {
+        "intent": "When was she last administered tdap vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'tdap vaccine', pmh)))"
+    },
+    {
+        "intent": "What is the Quality adjusted life years?",
+        "snippet": "latest(lambda x.has_concept(x, 'Quality adjusted life years', history))"
+    },
+    {
+        "intent": "What is the trend of his calcium values in the last 4 years?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'calcium values', history), time_within(x, 'in the last 4 years')))"
+    },
+    {
+        "intent": "What was the location of bone fractured in 2008?",
+        "snippet": "location(latest(lambda x.and(has_concept(x, 'bone fractured', pmh), time_within(x, 'in 2008'))))"
+    },
+    {
+        "intent": "When was she diagnosed with the perennial allergic rhinitis?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'perennial allergic rhinitis', pmh)))"
+    },
+    {
+        "intent": "When were the current medications documented first?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'current medications documented', pmh)))"
+    },
+    {
+        "intent": "When was the first Blood pressure recorded?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'Blood pressure', pmh)))"
+    },
+    {
+        "intent": "When was last time she received a hep B vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'hep B vaccine', pmh)))"
+    },
+    {
+        "intent": "What dose was prescribed for nitroglycerin?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'nitroglycerin', history)))"
+    },
+    {
+        "intent": "How much fosamax was she given?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'fosamax', pmh)))"
+    },
+    {
+        "intent": "What are the results of his colonoscopy exam?",
+        "snippet": "latest(lambda x.has_concept(x, 'colonoscopy', history))"
+    },
+    {
+        "intent": "What was the dosage for recent ibuprofen?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'ibuprofen', history)))"
+    },
+    {
+        "intent": "What is his low density lipoprotein cholesterol?",
+        "snippet": "latest(lambda x.has_concept(x, 'low density lipoprotein cholesterol', history))"
+    },
+    {
+        "intent": "Is his hand still lacerated?",
+        "snippet": "delta(lambda x.has_concept(x, 'hand still lacerated', status))"
+    },
+    {
+        "intent": "What was the most recent angina self management plan about?",
+        "snippet": "latest(lambda x.has_concept(x, 'angina self management plan', history))"
+    },
+    {
+        "intent": "When did she develop the allergy to grass pollen?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'allergy to grass pollen', pmh)))"
+    },
+    {
+        "intent": "When was her glucose level in blood above 95?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'glucose level in blood', history), greater_than(x, '95'))))"
+    },
+    {
+        "intent": "How many times did he have fracture subluxation of wrist after 2009?",
+        "snippet": "count(lambda x.and(has_concept(x, 'fracture subluxation of wrist', history), time_within(x, 'after 2009')))"
+    },
+    {
+        "intent": "Has she ever had an induced abortion?",
+        "snippet": "delta(lambda x.has_concept(x, 'induced abortion', pmh))"
+    },
+    {
+        "intent": "Was she ever given an intramuscular injection?",
+        "snippet": "delta(lambda x.has_concept(x, 'intramuscular injection', pmh))"
+    },
+    {
+        "intent": "How many outpatient encounters happened in 2015?",
+        "snippet": "count(lambda x.and(has_concept(x, 'outpatient encounters', pmh), time_within(x, 'in 2015')))"
+    },
+    {
+        "intent": "Where was the fracture?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'fracture', history)))"
+    },
+    {
+        "intent": "How low has his BMI been?",
+        "snippet": "min(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "When did he die?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'die', history)))"
+    },
+    {
+        "intent": "What is her sexual orientation?",
+        "snippet": "latest(lambda x.has_concept(x, 'sexual orientation', status))"
+    },
+    {
+        "intent": "When did he sprain his wrist?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'sprain his wrist', pmh)))"
+    },
+    {
+        "intent": "When was his forearm laceration ended?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'forearm laceration', pmh)))"
+    },
+    {
+        "intent": "Is she diabetic?",
+        "snippet": "delta(lambda x.has_concept(x, 'diabetic', status))"
+    },
+    {
+        "intent": "What was the duration of her last antenatal care plan?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'antenatal care plan', pmh)))"
+    },
+    {
+        "intent": "How is his urea nitrogen level varying in the last 3 years?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'urea nitrogen level', history), time_within(x, 'in the last 3 years')))"
+    },
+    {
+        "intent": "How often was she given flu vaccine?",
+        "snippet": "count(lambda x.has_concept(x, 'flu vaccine', history))"
+    },
+    {
+        "intent": "How many times did he undergo Physical therapy in the past 5 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'Physical therapy', history), time_within(x, 'in the past 5 years')))"
+    },
+    {
+        "intent": "When was the first allergy screening test performed?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'allergy screening test', pmh)))"
+    },
+    {
+        "intent": "Is he hypertensive?",
+        "snippet": "delta(lambda x.has_concept(x, 'hypertensive', status))"
+    },
+    {
+        "intent": "What was the encounter for problem due to?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'encounter for problem', pmh)))"
+    },
+    {
+        "intent": "Is her diabetes self management plan still going on?",
+        "snippet": "delta(lambda x.has_concept(x, 'diabetes self management plan', status))"
+    },
+    {
+        "intent": "How many times was the replacement of subcutaneous contraceptive done?",
+        "snippet": "count(lambda x.has_concept(x, 'replacement of subcutaneous contraceptive', history))"
+    },
+    {
+        "intent": "Has the calcium level ever go below 9 mg/dl in the last 5 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'calcium level', history), less_than(x, '9 mg/dl'), time_within(x, 'in the last 5 years')))"
+    },
+    {
+        "intent": "How long was his respiratory therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "How many times was he diagnosed with Otitis Media after 2014?",
+        "snippet": "count(lambda x.and(has_concept(x, 'Otitis Media', history), time_within(x, 'after 2014')))"
+    },
+    {
+        "intent": "How long did his encounter for symptom go on?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'encounter for symptom', pmh)))"
+    },
+    {
+        "intent": "When was he diagnosed with appendicitis?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'appendicitis', pmh)))"
+    },
+    {
+        "intent": "With what dose did we start the amoxicillin tablets?",
+        "snippet": "dose(earliest(lambda x.has_concept(x, 'amoxicillin tablets', pmh)))"
+    },
+    {
+        "intent": "How is her history of hospitalizations and outpatient visits?",
+        "snippet": "latest(lambda x.has_concept(x, 'history of hospitalizations and outpatient visits', history))"
+    },
+    {
+        "intent": "When was the current errin medication prescription written?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'errin medication', pmh)))"
+    },
+    {
+        "intent": "Is he losing weight?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "When was her wisdom tooth extracted?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'wisdom tooth extracted', pmh)))"
+    },
+    {
+        "intent": "What was the dose of the recent penicillin order?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'penicillin', history)))"
+    },
+    {
+        "intent": "How is the trend of body mass index?",
+        "snippet": "trend(lambda x.has_concept(x, 'body mass index', history))"
+    },
+    {
+        "intent": "How many times were the basic metabolic panel tests performed?",
+        "snippet": "count(lambda x.has_concept(x, 'basic metabolic panel', history))"
+    },
+    {
+        "intent": "Is the patient allergic to peanuts?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to peanuts', status))"
+    },
+    {
+        "intent": "Did she come for any treatment consultation this year?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'treatment consultation', pmh), time_within(x, 'this year')))"
+    },
+    {
+        "intent": "How many years has it been since the last Td vaccine?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'Td vaccine', pmh)))"
+    },
+    {
+        "intent": "When was he diagnosed with diabetic retinopathy associated with type II diabetes mellitus?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'diabetic retinopathy associated with type II diabetes mellitus', pmh)))"
+    },
+    {
+        "intent": "What are details of his physical therapy procedure?",
+        "snippet": "latest(lambda x.has_concept(x, 'physical therapy procedure', pmh))"
+    },
+    {
+        "intent": "How long was her pregnancy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'pregnancy', pmh)))"
+    },
+    {
+        "intent": "When was the diabetic neuropathy confirmed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'diabetic neuropathy', pmh)))"
+    },
+    {
+        "intent": "When was the acetaminophen ordered?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'acetaminophen', pmh)))"
+    },
+    {
+        "intent": "What has been the minimum glucose level so far?",
+        "snippet": "min(lambda x.has_concept(x, 'glucose level', history))"
+    },
+    {
+        "intent": "How many times was his height measured?",
+        "snippet": "count(lambda x.has_concept(x, 'height', history))"
+    },
+    {
+        "intent": "When was the percutaneous mechanical thrombectomy of portal vein initiated?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'percutaneous mechanical thrombectomy of portal vein', pmh)))"
+    },
+    {
+        "intent": "Was she admitted to surgical department?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted to surgical department', pmh))"
+    },
+    {
+        "intent": "Which year did he have first viral sinusitis?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'viral sinusitis', pmh)))"
+    },
+    {
+        "intent": "How often was the rotavirus vaccine given?",
+        "snippet": "count(lambda x.has_concept(x, 'rotavirus vaccine', history))"
+    },
+    {
+        "intent": "Is she allergic to mould?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to mould', status))"
+    },
+    {
+        "intent": "What was the disability rating scale in 2017?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'disability rating scale', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "What is the lowest body height?",
+        "snippet": "min(lambda x.has_concept(x, 'body height', history))"
+    },
+    {
+        "intent": "Did he have viral sinusitis in the past 5 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'viral sinusitis', pmh), time_within(x, 'in the past 5 years')))"
+    },
+    {
+        "intent": "How has his total cholesterol levels been?",
+        "snippet": "trend(lambda x.has_concept(x, 'total cholesterol levels', history))"
+    },
+    {
+        "intent": "When did he become diabetic?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'diabetic', pmh)))"
+    },
+    {
+        "intent": "How many times has she had otitis media?",
+        "snippet": "count(lambda x.has_concept(x, 'otitis media', history))"
+    },
+    {
+        "intent": "How long did he get care for his wound?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'care for his wound', pmh)))"
+    },
+    {
+        "intent": "When was the contact eczema resolved?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'contact eczema', pmh)))"
+    },
+    {
+        "intent": "What was the highest Total cholesterol?",
+        "snippet": "max(lambda x.has_concept(x, 'Total cholesterol', history))"
+    },
+    {
+        "intent": "How many times has he visited for some symptom?",
+        "snippet": "count(lambda x.has_concept(x, 'visited for some symptom', history))"
+    },
+    {
+        "intent": "Was he given Td vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'Td vaccine', history))"
+    },
+    {
+        "intent": "When was she first diagnosed with acute viral pharyngitis?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'acute viral pharyngitis', pmh)))"
+    },
+    {
+        "intent": "What are the details of her respiratory therapies?",
+        "snippet": "lambda x.has_concept(x, 'respiratory therapies', pmh), "
+    },
+    {
+        "intent": "When the first time she was prescribed camila?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'camila', pmh)))"
+    },
+    {
+        "intent": "When was the basic metabolic panel ordered last?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'basic metabolic panel', pmh)))"
+    },
+    {
+        "intent": "When did she take the zoster vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'zoster vaccine', pmh)))"
+    },
+    {
+        "intent": "What number of times did the patient have a colonoscopy in the last 5 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'colonoscopy', pmh), time_within(x, 'in the last 5 years')))"
+    },
+    {
+        "intent": "Did he take the influenza vaccine last year?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'influenza vaccine', pmh), time_within(x, 'last year')))"
+    },
+    {
+        "intent": "How much ml of Epinephrine 0.5 mg/ml auto injector did he receive?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Epinephrine 0 . 5 mg / ml auto injector', history)))"
+    },
+    {
+        "intent": "When did we last measure the walnut IgE antibody in serum?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'walnut IgE antibody in serum', pmh)))"
+    },
+    {
+        "intent": "When did he start his HPV vaccination series?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'HPV', history)))"
+    },
+    {
+        "intent": "What was the highest BP?",
+        "snippet": "max(lambda x.has_concept(x, 'BP', history))"
+    },
+    {
+        "intent": "When was the chronic intractable migraine started?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'chronic intractable migraine', pmh)))"
+    },
+    {
+        "intent": "Why was she prescribed the nitrofurantoin?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'nitrofurantoin', pmh)))"
+    },
+    {
+        "intent": "When was the last time a lipid panel test was done?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'lipid panel', pmh)))"
+    },
+    {
+        "intent": "When was the nitrolingual medication started?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'nitrolingual', pmh)))"
+    },
+    {
+        "intent": "Where was the osteoarthritis?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'osteoarthritis', history)))"
+    },
+    {
+        "intent": "Did she get any angina self management?",
+        "snippet": "delta(lambda x.has_concept(x, 'angina self management', pmh))"
+    },
+    {
+        "intent": "Has he gotten any Lipid panel?",
+        "snippet": "delta(lambda x.has_concept(x, 'Lipid panel', history))"
+    },
+    {
+        "intent": "Does she have mould allergy?",
+        "snippet": "delta(lambda x.has_concept(x, 'mould allergy', status))"
+    },
+    {
+        "intent": "How long did his first physical therapy last?",
+        "snippet": "duration(earliest(lambda x.has_concept(x, 'physical therapy', pmh)))"
+    },
+    {
+        "intent": "What is the measured value of cladosporium herbarum IgE antibody in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'cladosporium herbarum IgE antibody in serum', history))"
+    },
+    {
+        "intent": "Is his Body mass index increasing?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'Body mass index', history))"
+    },
+    {
+        "intent": "What is the dose of her first penicillin V potassium?",
+        "snippet": "dose(earliest(lambda x.has_concept(x, 'penicillin V potassium', pmh)))"
+    },
+    {
+        "intent": "Is his body mass index decreasing?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'body mass index', history))"
+    },
+    {
+        "intent": "How high has her blood glucose been?",
+        "snippet": "max(lambda x.has_concept(x, 'blood glucose', history))"
+    },
+    {
+        "intent": "How long did she have allergic disorder monitoring?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'allergic disorder monitoring', pmh)))"
+    },
+    {
+        "intent": "Is he still on hydrocortisone topical cream?",
+        "snippet": "delta(lambda x.has_concept(x, 'hydrocortisone topical cream', status))"
+    },
+    {
+        "intent": "When was her first outpatient encounter?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'outpatient encounter', pmh)))"
+    },
+    {
+        "intent": "How many days was she given wound care?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'wound care', history)))"
+    },
+    {
+        "intent": "When was the first time she was prescribed errin?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'errin', pmh)))"
+    },
+    {
+        "intent": "When was the labor induced medically?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'labor induced medically', pmh)))"
+    },
+    {
+        "intent": "How long did he receive physical therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'physical therapy', pmh)))"
+    },
+    {
+        "intent": "What are the details of procedure for suturing his open wound?",
+        "snippet": "latest(lambda x.has_concept(x, 'procedure for suturing his open wound', history))"
+    },
+    {
+        "intent": "How high has the blood CO2 level been?",
+        "snippet": "max(lambda x.has_concept(x, 'blood CO2 level', history))"
+    },
+    {
+        "intent": "What was found to be the cause of death?",
+        "snippet": "latest(lambda x.has_concept(x, 'cause of death', history))"
+    },
+    {
+        "intent": "Did he receive musculoskeletal care?",
+        "snippet": "delta(lambda x.has_concept(x, 'musculoskeletal care', pmh))"
+    },
+    {
+        "intent": "When was the first normal pregnancy?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'normal pregnancy', pmh)))"
+    },
+    {
+        "intent": "When did she start Drug addiction therapy?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'Drug addiction therapy', pmh)))"
+    },
+    {
+        "intent": "What is the dose of first acetaminophen?",
+        "snippet": "dose(earliest(lambda x.has_concept(x, 'acetaminophen', pmh)))"
+    },
+    {
+        "intent": "Is he allergic to wheat?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to wheat', status))"
+    },
+    {
+        "intent": "When was her lipid panel test conducted?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'lipid panel test', pmh)))"
+    },
+    {
+        "intent": "How is her housing conditions?",
+        "snippet": "latest(lambda x.has_concept(x, 'housing conditions', history))"
+    },
+    {
+        "intent": "What is the maximum value for urea nitrogen?",
+        "snippet": "max(lambda x.has_concept(x, 'urea nitrogen', history))"
+    },
+    {
+        "intent": "What was the reason for his last encounter for symptom?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'encounter for symptom', pmh)))"
+    },
+    {
+        "intent": "How long was he on the burn care plan?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'burn care plan', pmh)))"
+    },
+    {
+        "intent": "Has the American house dust mite IgE antibodies in Serum increased?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'American house dust mite IgE antibodies in Serum', history))"
+    },
+    {
+        "intent": "Is he diagnosed to be prediabetic?",
+        "snippet": "delta(lambda x.has_concept(x, 'prediabetic', status))"
+    },
+    {
+        "intent": "What was the lowest Hemoglobin A1c level in blood?",
+        "snippet": "min(lambda x.has_concept(x, 'Hemoglobin A1c level in blood', history))"
+    },
+    {
+        "intent": "Which year was the last Hep A vaccine given?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Hep A vaccine', pmh)))"
+    },
+    {
+        "intent": "When did she last have a prenatal visit?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'prenatal visit', pmh)))"
+    },
+    {
+        "intent": "How often did he have flu vaccine?",
+        "snippet": "count(lambda x.has_concept(x, 'flu vaccine', history))"
+    },
+    {
+        "intent": "How is his body weight changing?",
+        "snippet": "trend(lambda x.has_concept(x, 'body weight', history))"
+    },
+    {
+        "intent": "Is she still on astemizole oral tablets?",
+        "snippet": "delta(lambda x.has_concept(x, 'astemizole oral tablets', status))"
+    },
+    {
+        "intent": "Which year did he start diabetes self management?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'diabetes self management', pmh)))"
+    },
+    {
+        "intent": "How many times did she go through the subcutaneous immunotherapy this year?",
+        "snippet": "count(lambda x.and(has_concept(x, 'subcutaneous immunotherapy', history), time_within(x, 'this year')))"
+    },
+    {
+        "intent": "How much is the level of latex immunoglobulin E Ab in Serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'latex immunoglobulin E Ab in Serum', history))"
+    },
+    {
+        "intent": "When was the last time he came for an outpatient encounter?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'outpatient encounter', pmh)))"
+    },
+    {
+        "intent": "What is the cause of death?",
+        "snippet": "latest(lambda x.has_concept(x, 'cause of death', history))"
+    },
+    {
+        "intent": "When was he tested for allergy screening?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'tested for allergy screening', history)))"
+    },
+    {
+        "intent": "Is his respiratory therapy plan still active?",
+        "snippet": "delta(lambda x.has_concept(x, 'respiratory therapy plan', status))"
+    },
+    {
+        "intent": "Did he have a colonoscopy in the past 2 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'colonoscopy', pmh), time_within(x, 'in the past 2 years')))"
+    },
+    {
+        "intent": "Was he vaccinated with rotavirus monovalent?",
+        "snippet": "delta(lambda x.has_concept(x, 'rotavirus monovalent', pmh))"
+    },
+    {
+        "intent": "What is his highest body height?",
+        "snippet": "max(lambda x.has_concept(x, 'body height', history))"
+    },
+    {
+        "intent": "When was his hypertension diagnosed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'hypertension', pmh)))"
+    },
+    {
+        "intent": "When was the cancer suspected?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'cancer suspected', pmh)))"
+    },
+    {
+        "intent": "Has she ever received an MMR?",
+        "snippet": "delta(lambda x.has_concept(x, 'MMR', pmh))"
+    },
+    {
+        "intent": "How many times were the influenza shots given to her in the past 3 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'influenza shots', history), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "When did she have the episiotomy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'episiotomy', pmh)))"
+    },
+    {
+        "intent": "When was he diagnosed with asthma?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'asthma', pmh)))"
+    },
+    {
+        "intent": "How much was the blood pressure on first measurement?",
+        "snippet": "earliest(lambda x.has_concept(x, 'blood pressure', history))"
+    },
+    {
+        "intent": "What was the dose of fosamax?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'fosamax', pmh)))"
+    },
+    {
+        "intent": "What was the lowest FEV1/FVC?",
+        "snippet": "min(lambda x.has_concept(x, 'FEV1 / FVC', history))"
+    },
+    {
+        "intent": "What year was Tdap administered?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Tdap', pmh)))"
+    },
+    {
+        "intent": "Is there any weight gain?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "What is the HIV status of patient?",
+        "snippet": "latest(lambda x.has_concept(x, 'HIV status', status))"
+    },
+    {
+        "intent": "What was the recent office visit for?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'office visit', pmh)))"
+    },
+    {
+        "intent": "Was he tested for allergies?",
+        "snippet": "delta(lambda x.has_concept(x, 'tested for allergies', history))"
+    },
+    {
+        "intent": "What were his LDL levels in 2016?",
+        "snippet": "lambda x.and(has_concept(x, 'LDL levels', pmh), time_within(x, 'in 2016'))"
+    },
+    {
+        "intent": "How many days was he provided with fracture care?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'fracture care', pmh)))"
+    },
+    {
+        "intent": "For how long did she have acute viral pharyngitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'acute viral pharyngitis', pmh)))"
+    },
+    {
+        "intent": "Does she have a history of E Coli Urinary Tract Infection?",
+        "snippet": "delta(lambda x.has_concept(x, 'E Coli Urinary Tract Infection', pmh))"
+    },
+    {
+        "intent": "What was lowest IgE Ab level in serum for walnut?",
+        "snippet": "min(lambda x.has_concept(x, 'IgE Ab level in serum for walnut', history))"
+    },
+    {
+        "intent": "What was her latest Blood pressure?",
+        "snippet": "latest(lambda x.has_concept(x, 'Blood pressure', history))"
+    },
+    {
+        "intent": "Was he managed for dementia in 2012?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'managed for dementia', pmh), time_within(x, 'in 2012')))"
+    },
+    {
+        "intent": "What was his oral temperature in 2014?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'oral temperature', pmh), time_within(x, 'in 2014')))"
+    },
+    {
+        "intent": "What was the reason for encounter for check up?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'encounter for check up', pmh)))"
+    },
+    {
+        "intent": "How much are the soybean IgE antibodies in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'soybean IgE antibodies in serum', history))"
+    },
+    {
+        "intent": "How low has her body mass index been?",
+        "snippet": "min(lambda x.has_concept(x, 'body mass index', history))"
+    },
+    {
+        "intent": "Has he gone through a colonoscopy?",
+        "snippet": "delta(lambda x.has_concept(x, 'colonoscopy', pmh))"
+    },
+    {
+        "intent": "What is the dose of penicillin V potassium?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'penicillin V potassium', history)))"
+    },
+    {
+        "intent": "When was the first MMR given?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'MMR', pmh)))"
+    },
+    {
+        "intent": "When was the first time he received subcutaneous immunotherapy?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'subcutaneous immunotherapy', pmh)))"
+    },
+    {
+        "intent": "Which year did she suffer from intractable migraine without aura?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'intractable migraine without aura', pmh)))"
+    },
+    {
+        "intent": "Do we have her blood sodium levels?",
+        "snippet": "delta(lambda x.has_concept(x, 'blood sodium levels', history))"
+    },
+    {
+        "intent": "For how long did she undergo respiratory therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "What was the highest LDL level measured for him?",
+        "snippet": "max(lambda x.has_concept(x, 'LDL level', history))"
+    },
+    {
+        "intent": "Was she ever on vicodin medication?",
+        "snippet": "delta(lambda x.has_concept(x, 'vicodin medication', pmh))"
+    },
+    {
+        "intent": "How much was the chloride on first test?",
+        "snippet": "earliest(lambda x.has_concept(x, 'chloride', pmh))"
+    },
+    {
+        "intent": "Did she have chronic sinusitis?",
+        "snippet": "delta(lambda x.has_concept(x, 'chronic sinusitis', pmh))"
+    },
+    {
+        "intent": "When did his potassium level go above 4.5 mmol/l?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'potassium level', history), greater_than(x, '4.5 mmol/l'))))"
+    },
+    {
+        "intent": "When was her chronic sinusitis confirmed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'chronic sinusitis', pmh)))"
+    },
+    {
+        "intent": "When was the diabetes self management plan started?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'diabetes self management plan', pmh)))"
+    },
+    {
+        "intent": "How many times has he had an encounter for problem?",
+        "snippet": "count(lambda x.has_concept(x, 'encounter for problem', history))"
+    },
+    {
+        "intent": "How often did he have colonoscopy in the last decade?",
+        "snippet": "count(lambda x.and(has_concept(x, 'colonoscopy', history), time_within(x, 'in the last decade')))"
+    },
+    {
+        "intent": "What is the dosage information for loratadine oral tablets?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'loratadine oral tablets', history)))"
+    },
+    {
+        "intent": "What is the cause of death?",
+        "snippet": "latest(lambda x.has_concept(x, 'cause of death', history))"
+    },
+    {
+        "intent": "What was the latex IgE Ab in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'latex IgE Ab in serum', history))"
+    },
+    {
+        "intent": "When did she take Amoxicillin/Clavulanate?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Amoxicillin / Clavulanate', pmh)))"
+    },
+    {
+        "intent": "When was the quality adjusted life years calculated?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'quality adjusted life years', pmh)))"
+    },
+    {
+        "intent": "When was the last time dextromethorphan was prescribed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'dextromethorphan', pmh)))"
+    },
+    {
+        "intent": "What is his blood glucose goal?",
+        "snippet": "latest(lambda x.has_concept(x, 'blood glucose goal', plan))"
+    },
+    {
+        "intent": "How many times are the amoxicillin tablets prescribed?",
+        "snippet": "count(lambda x.has_concept(x, 'amoxicillin tablets', history))"
+    },
+    {
+        "intent": "What was the dosage on last amoxicillin prescription?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'amoxicillin', pmh)))"
+    },
+    {
+        "intent": "When was he admitted to the emergency room?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'admitted to the emergency room', pmh)))"
+    },
+    {
+        "intent": "Why was she ordered loratadine tablets?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'loratadine tablets', pmh)))"
+    },
+    {
+        "intent": "How much Razadyne was given?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Razadyne', history)))"
+    },
+    {
+        "intent": "For how long was the wound care given?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'wound care', pmh)))"
+    },
+    {
+        "intent": "How has her levels of calcium in blood been?",
+        "snippet": "trend(lambda x.has_concept(x, 'levels of calcium in blood', history))"
+    },
+    {
+        "intent": "How many times was self care delivered in 2012?",
+        "snippet": "count(lambda x.and(has_concept(x, 'self care', pmh), time_within(x, 'in 2012')))"
+    },
+    {
+        "intent": "Was he given burn care?",
+        "snippet": "delta(lambda x.has_concept(x, 'burn care', pmh))"
+    },
+    {
+        "intent": "How has her estimated glomerular filtration rates been?",
+        "snippet": "trend(lambda x.has_concept(x, 'estimated glomerular filtration rates', history))"
+    },
+    {
+        "intent": "When was the latest outpatient encounter?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'outpatient encounter', pmh)))"
+    },
+    {
+        "intent": "How long did her wound care plan continue for?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'wound care plan', pmh)))"
+    },
+    {
+        "intent": "How many times was the Basic metabolic panel tested?",
+        "snippet": "count(lambda x.has_concept(x, 'Basic metabolic panel', history))"
+    },
+    {
+        "intent": "What is the latest BMI value?",
+        "snippet": "latest(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "What is the trend of his HDL level?",
+        "snippet": "trend(lambda x.has_concept(x, 'HDL level', history))"
+    },
+    {
+        "intent": "What was his lowest height?",
+        "snippet": "min(lambda x.has_concept(x, 'height', history))"
+    },
+    {
+        "intent": "What is the trend of his hemoglobin level in the past 5 years?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'hemoglobin level', history), time_within(x, 'in the past 5 years')))"
+    },
+    {
+        "intent": "How many times did he come for outpatient visit?",
+        "snippet": "count(lambda x.has_concept(x, 'outpatient visit', history))"
+    },
+    {
+        "intent": "When was the last HPV given?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'HPV', pmh)))"
+    },
+    {
+        "intent": "How many times did she have respiratory therapy in 2014?",
+        "snippet": "count(lambda x.and(has_concept(x, 'respiratory therapy', pmh), time_within(x, 'in 2014')))"
+    },
+    {
+        "intent": "When was the last time his hemoglobin A1c dropped below 6%?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'hemoglobin A1c', pmh), less_than(x, '6%'))))"
+    },
+    {
+        "intent": "When was the latest lipid panel done?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'lipid panel', pmh)))"
+    },
+    {
+        "intent": "What caused her death?",
+        "snippet": "latest(lambda x.has_concept(x, 'caused her death', history))"
+    },
+    {
+        "intent": "When was Penicillin prescribed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Penicillin', pmh)))"
+    },
+    {
+        "intent": "What are the results of his lipid panel?",
+        "snippet": "latest(lambda x.has_concept(x, 'lipid panel', history))"
+    },
+    {
+        "intent": "Was the blood sugar less than 70 mg/dl?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'blood sugar', history), less_than(x, '70 mg/dl')))"
+    },
+    {
+        "intent": "Was his oral temperature less than 40 C in 2009?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'oral temperature', pmh), less_than(x, '40 C'), time_within(x, 'in 2009')))"
+    },
+    {
+        "intent": "Did she ever have an open wound sutured?",
+        "snippet": "delta(lambda x.has_concept(x, 'open wound sutured', pmh))"
+    },
+    {
+        "intent": "How many times was he vaccinated for Influenza?",
+        "snippet": "count(lambda x.has_concept(x, 'vaccinated for Influenza', history))"
+    },
+    {
+        "intent": "What is the recent Hemoglobin A1c?",
+        "snippet": "latest(lambda x.has_concept(x, 'Hemoglobin A1c', history))"
+    },
+    {
+        "intent": "What was the reason for his visit for symptom?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'visit for symptom', pmh)))"
+    },
+    {
+        "intent": "How many times was he vaccinated for flu after 2012?",
+        "snippet": "count(lambda x.and(has_concept(x, 'vaccinated for flu', history), time_within(x, 'after 2012')))"
+    },
+    {
+        "intent": "Is she allergic to peanuts?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to peanuts', status))"
+    },
+    {
+        "intent": "How many allergy screening test results do we have for him?",
+        "snippet": "count(lambda x.has_concept(x, 'allergy screening test', history))"
+    },
+    {
+        "intent": "How often did he suffer from Viral sinusitis?",
+        "snippet": "count(lambda x.has_concept(x, 'Viral sinusitis', history))"
+    },
+    {
+        "intent": "When was his disability rating scale measured?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'disability rating scale', history)))"
+    },
+    {
+        "intent": "When was he diagnosed the animal dander allergy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'animal dander allergy', pmh)))"
+    },
+    {
+        "intent": "Was any allergy screening performed on him?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergy screening', history))"
+    },
+    {
+        "intent": "When was the last colonoscopy performed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'colonoscopy', pmh)))"
+    },
+    {
+        "intent": "Did she ever go through an instrumental delivery?",
+        "snippet": "delta(lambda x.has_concept(x, 'instrumental delivery', pmh))"
+    },
+    {
+        "intent": "When was the subcutaneous immunotherapy initiated?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'subcutaneous immunotherapy', pmh)))"
+    },
+    {
+        "intent": "What is the recent BMI?",
+        "snippet": "latest(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "Did his potassium level ever go higher than 4.5 mmol/l?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'potassium level', history), greater_than(x, '4.5 mmol/l')))"
+    },
+    {
+        "intent": "What is the value of QALY?",
+        "snippet": "latest(lambda x.has_concept(x, 'QALY', history))"
+    },
+    {
+        "intent": "When did he start asthma self management?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'asthma self management', pmh)))"
+    },
+    {
+        "intent": "What is the goal for maintaining his blood pressure?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal for maintaining his blood pressure', plan))"
+    },
+    {
+        "intent": "When was his total cholesterol greater than 190?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'total cholesterol', history), greater_than(x, '190'))))"
+    },
+    {
+        "intent": "When was the certificate of death issued?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'certificate of death', history)))"
+    },
+    {
+        "intent": "Was she pregnant?",
+        "snippet": "delta(lambda x.has_concept(x, 'pregnant', status))"
+    },
+    {
+        "intent": "When was the first time an intrauterine contraceptive device inserted?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'intrauterine contraceptive device inserted', pmh)))"
+    },
+    {
+        "intent": "When was the first insertion of any subcutaneous contraceptive?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'insertion of any subcutaneous contraceptive', pmh)))"
+    },
+    {
+        "intent": "What is upper limit to maintain BP?",
+        "snippet": "latest(lambda x.has_concept(x, 'upper limit to maintain BP', plan))"
+    },
+    {
+        "intent": "What is the highest BMI?",
+        "snippet": "max(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "How many times in the last 15 years was colonoscopy done?",
+        "snippet": "count(lambda x.and(has_concept(x, 'colonoscopy', history), time_within(x, 'in the last 15 years')))"
+    },
+    {
+        "intent": "Did the body weight fall below 120 kg?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'body weight', history), less_than(x, '120 kg')))"
+    },
+    {
+        "intent": "When was the instrumental delivery performed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'instrumental delivery', pmh)))"
+    },
+    {
+        "intent": "When did her respiratory therapy start?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "Does he have viral sinusitis?",
+        "snippet": "delta(lambda x.has_concept(x, 'viral sinusitis', history))"
+    },
+    {
+        "intent": "Why was he in the wound care plan?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'wound care plan', pmh)))"
+    },
+    {
+        "intent": "When was the last bone density scan done?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'bone density scan', pmh)))"
+    },
+    {
+        "intent": "Did he have closed fracture of hip?",
+        "snippet": "delta(lambda x.has_concept(x, 'closed fracture of hip', history))"
+    },
+    {
+        "intent": "What is the trend in Wheat Ig E Ab level in serum?",
+        "snippet": "trend(lambda x.has_concept(x, 'Wheat Ig E Ab level in serum', history))"
+    },
+    {
+        "intent": "What is the goal for her glucose level?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal for her glucose level', plan))"
+    },
+    {
+        "intent": "What was his least BMI?",
+        "snippet": "min(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "Was she ever prescribed the Yaz 28 day pack?",
+        "snippet": "delta(lambda x.has_concept(x, 'Yaz 28 day pack', pmh))"
+    },
+    {
+        "intent": "What is the dose of the recent acetaminophen?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'acetaminophen', history)))"
+    },
+    {
+        "intent": "Is she hypertensive?",
+        "snippet": "delta(lambda x.has_concept(x, 'hypertensive', status))"
+    },
+    {
+        "intent": "Was she ever prescribed the depo-subQ provera?",
+        "snippet": "delta(lambda x.has_concept(x, 'depo-subQ provera', pmh))"
+    },
+    {
+        "intent": "How is his LDL?",
+        "snippet": "latest(lambda x.has_concept(x, 'LDL', history))"
+    },
+    {
+        "intent": "How many times did he get his lipid panel checked after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'lipid panel', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "When was she first prescribed depo-subQ provera?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'depo-subQ provera', pmh)))"
+    },
+    {
+        "intent": "When was his otitis media resolved?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'otitis media', pmh)))"
+    },
+    {
+        "intent": "Was she ever on antenatal care?",
+        "snippet": "delta(lambda x.has_concept(x, 'antenatal care', pmh))"
+    },
+    {
+        "intent": "How long was he admitted in the emergency room for?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'admitted in the emergency room', pmh)))"
+    },
+    {
+        "intent": "How long has she been using albuterol metered dose inhaler?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'albuterol metered dose inhaler', pmh)))"
+    },
+    {
+        "intent": "When was the diagnosis of perennial allergic rhinitis made?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'perennial allergic rhinitis', pmh)))"
+    },
+    {
+        "intent": "When was he diagnosed with Coronary Heart Disease?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Coronary Heart Disease', pmh)))"
+    },
+    {
+        "intent": "Did he have the coronary heart disease?",
+        "snippet": "delta(lambda x.has_concept(x, 'coronary heart disease', history))"
+    },
+    {
+        "intent": "How much amlodipine did he take in 1996?",
+        "snippet": "dose(latest(lambda x.and(has_concept(x, 'amlodipine', pmh), time_within(x, 'in 1996'))))"
+    },
+    {
+        "intent": "When did the asthama self management plan start?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'asthama self management', pmh)))"
+    },
+    {
+        "intent": "How many times was Acetaminophen prescribed in the past 3 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'Acetaminophen', history), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "Where was the tendon injured?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'tendon injured', history)))"
+    },
+    {
+        "intent": "Which year did he last take an influenza vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'influenza vaccine', pmh)))"
+    },
+    {
+        "intent": "How many times did he suffer from viral sinusitis in the past 10 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'viral sinusitis', history), time_within(x, 'in the past 10 years')))"
+    },
+    {
+        "intent": "How is his weight?",
+        "snippet": "latest(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "When was the ibuprofen tablet stopped?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'ibuprofen tablet', pmh)))"
+    },
+    {
+        "intent": "Was he given the pneumococcal conjugate vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'pneumococcal conjugate vaccine', pmh))"
+    },
+    {
+        "intent": "How many times was Natazia 28 prescribed after 2009?",
+        "snippet": "count(lambda x.and(has_concept(x, 'Natazia 28', history), time_within(x, 'after 2009')))"
+    },
+    {
+        "intent": "How long did she suffer from Viral sinusitis?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'Viral sinusitis', pmh)))"
+    },
+    {
+        "intent": "How long did he suffer from facial laceration?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'facial laceration', pmh)))"
+    },
+    {
+        "intent": "When was the fluticasone propionate inhaler prescribed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'fluticasone propionate inhaler', pmh)))"
+    },
+    {
+        "intent": "What was the starting date for amlodipine medication?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'amlodipine medication', pmh)))"
+    },
+    {
+        "intent": "When did he get a second degree burn?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'second degree burn', pmh)))"
+    },
+    {
+        "intent": "How many times was the patient tested for basic metabolic panel after 2013?",
+        "snippet": "count(lambda x.and(has_concept(x, 'basic metabolic panel', history), time_within(x, 'after 2013')))"
+    },
+    {
+        "intent": "What is the blood pressure for maintenance?",
+        "snippet": "latest(lambda x.has_concept(x, 'blood pressure for maintenance', plan))"
+    },
+    {
+        "intent": "When was the clonazepam medication ordered?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'clonazepam medication', pmh)))"
+    },
+    {
+        "intent": "What are the particulars of his allergic disorder monitoring?",
+        "snippet": "latest(lambda x.has_concept(x, 'allergic disorder monitoring', history))"
+    },
+    {
+        "intent": "When was the last time his current medications got documented?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'current medications got documented', pmh)))"
+    },
+    {
+        "intent": "Which year did she develop microalbuminuria?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'microalbuminuria', pmh)))"
+    },
+    {
+        "intent": "What is the value of Quality adjusted life years?",
+        "snippet": "latest(lambda x.has_concept(x, 'Quality adjusted life years', history))"
+    },
+    {
+        "intent": "When did the low density lipoprotein level go over 100?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'low density lipoprotein level', history), greater_than(x, '100'))))"
+    },
+    {
+        "intent": "When was the wound sutured last?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'wound sutured', pmh)))"
+    },
+    {
+        "intent": "What is the peanut IgE antibody measure?",
+        "snippet": "latest(lambda x.has_concept(x, 'peanut IgE antibody measure', history))"
+    },
+    {
+        "intent": "Did his carbon dioxide level ever go less than 25 mmol/l?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'carbon dioxide level', history), less_than(x, '25 mmol/l')))"
+    },
+    {
+        "intent": "Did he ever have an emergency room admission?",
+        "snippet": "delta(lambda x.has_concept(x, 'emergency room admission', pmh))"
+    },
+    {
+        "intent": "How long did her urinary tract infection care last?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'urinary tract infection care', pmh)))"
+    },
+    {
+        "intent": "When did he start Musculoskeletal care?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'Musculoskeletal care', pmh)))"
+    },
+    {
+        "intent": "What was his highest calcium level?",
+        "snippet": "max(lambda x.has_concept(x, 'calcium level', history))"
+    },
+    {
+        "intent": "When was the patient diagnosed with neuropathy due to type 2 diabetes mellitus?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'neuropathy due to type 2 diabetes mellitus', pmh)))"
+    },
+    {
+        "intent": "Was he ever administered a zoster vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'zoster vaccine', pmh))"
+    },
+    {
+        "intent": "How many times was he seen for a symptom?",
+        "snippet": "count(lambda x.has_concept(x, 'seen for a symptom', history))"
+    },
+    {
+        "intent": "Is there a goal for blood pressure?",
+        "snippet": "delta(lambda x.has_concept(x, 'goal for blood pressure', plan))"
+    },
+    {
+        "intent": "When did he last have his Influenza vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Influenza vaccine', pmh)))"
+    },
+    {
+        "intent": "What is the trend of her BMI?",
+        "snippet": "trend(lambda x.has_concept(x, 'BMI', history))"
+    },
+    {
+        "intent": "How long did the fracture care go on?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'fracture care', pmh)))"
+    },
+    {
+        "intent": "What year was the last colonoscopy done?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'colonoscopy', pmh)))"
+    },
+    {
+        "intent": "Has her blood glucose level ever been less than 70 mg/dl?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'blood glucose level', history), less_than(x, '70 mg/dl')))"
+    },
+    {
+        "intent": "What was the highest Hemoglobin A1c level in blood?",
+        "snippet": "max(lambda x.has_concept(x, 'Hemoglobin A1c level in blood', history))"
+    },
+    {
+        "intent": "Is she an asthmatic?",
+        "snippet": "delta(lambda x.has_concept(x, 'asthmatic', status))"
+    },
+    {
+        "intent": "How long has he been diabetic?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'diabetic', pmh)))"
+    },
+    {
+        "intent": "Why was she provided with head injury rehabilitation plan?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'head injury rehabilitation plan', pmh)))"
+    },
+    {
+        "intent": "How often did he undergo outpatient procedure in 2016?",
+        "snippet": "count(lambda x.and(has_concept(x, 'outpatient procedure', pmh), time_within(x, 'in 2016')))"
+    },
+    {
+        "intent": "What are the details of his ruptured appendix",
+        "snippet": "latest(lambda x.has_concept(x, 'ruptured appendix', pmh))"
+    },
+    {
+        "intent": "What is her most recent BP?",
+        "snippet": "latest(lambda x.has_concept(x, 'BP', history))"
+    },
+    {
+        "intent": "Has she ever been admitted to Emergency room?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted to Emergency room', pmh))"
+    },
+    {
+        "intent": "Did he undergo throat culture?",
+        "snippet": "delta(lambda x.has_concept(x, 'throat culture', pmh))"
+    },
+    {
+        "intent": "What was her maximum HDL level?",
+        "snippet": "max(lambda x.has_concept(x, 'HDL level', history))"
+    },
+    {
+        "intent": "When was her last normal pregnancy?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'normal pregnancy', pmh)))"
+    },
+    {
+        "intent": "When was he last seen in outpatient?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'seen in outpatient', pmh)))"
+    },
+    {
+        "intent": "Was she ever prescribed the mirena intrauterine system?",
+        "snippet": "delta(lambda x.has_concept(x, 'mirena intrauterine system', pmh))"
+    },
+    {
+        "intent": "How many doses of DTap were given to him?",
+        "snippet": "count(lambda x.has_concept(x, 'DTap', history))"
+    },
+    {
+        "intent": "What was the lowest Hemoglobin A1c?",
+        "snippet": "min(lambda x.has_concept(x, 'Hemoglobin A1c', history))"
+    },
+    {
+        "intent": "Did she ever have an episiotomy?",
+        "snippet": "delta(lambda x.has_concept(x, 'episiotomy', pmh))"
+    },
+    {
+        "intent": "Did she have neuropathy because of the type 2 diabetes?",
+        "snippet": "delta(lambda x.has_concept(x, 'neuropathy because of the type 2 diabetes', history))"
+    },
+    {
+        "intent": "When did the patient have a throat culture?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'throat culture', pmh)))"
+    },
+    {
+        "intent": "When was the last time she was prescribed nexplanon drug implant?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'nexplanon drug implant', pmh)))"
+    },
+    {
+        "intent": "What was the Codfish Ig E Ab in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'Codfish Ig E Ab in serum', history))"
+    },
+    {
+        "intent": "What is the dose of Zyloprim?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Zyloprim', history)))"
+    },
+    {
+        "intent": "Where was the culture material taken from?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'culture', history)))"
+    },
+    {
+        "intent": "What was the MMSE score?",
+        "snippet": "latest(lambda x.has_concept(x, 'MMSE score', history))"
+    },
+    {
+        "intent": "Has the blood glucose been greater than 70?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'blood glucose', history), greater_than(x, '70')))"
+    },
+    {
+        "intent": "What was his lowest weight?",
+        "snippet": "min(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "Was he seen in outpatient in 2015?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'seen in outpatient', pmh), time_within(x, 'in 2015')))"
+    },
+    {
+        "intent": "What was the reason for his encounter for symptom in march 2013?",
+        "snippet": "reason(latest(lambda x.and(has_concept(x, 'encounter for symptom', pmh), time_within(x, 'in march 2013'))))"
+    },
+    {
+        "intent": "When was he diagnosed with osteoporosis?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'osteoporosis', pmh)))"
+    },
+    {
+        "intent": "What was his highest body weight?",
+        "snippet": "max(lambda x.has_concept(x, 'body weight', history))"
+    },
+    {
+        "intent": "What are the results of American house dust mite IgE blood test?",
+        "snippet": "latest(lambda x.has_concept(x, 'American house dust mite IgE blood test', history))"
+    },
+    {
+        "intent": "What time did his potassium level drop below 4 mmol/l?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'potassium level', history), less_than(x, '4 mmol/l'))))"
+    },
+    {
+        "intent": "How many times was the IPV administered in 2013?",
+        "snippet": "count(lambda x.and(has_concept(x, 'IPV', pmh), time_within(x, 'in 2013')))"
+    },
+    {
+        "intent": "Does she suffer from Coronary Heart Disease?",
+        "snippet": "delta(lambda x.has_concept(x, 'Coronary Heart Disease', status))"
+    },
+    {
+        "intent": "What is the trend for Body weight?",
+        "snippet": "trend(lambda x.has_concept(x, 'Body weight', history))"
+    },
+    {
+        "intent": "Did we test for the cow milk IgE antibody in serum?",
+        "snippet": "delta(lambda x.has_concept(x, 'cow milk IgE antibody in serum', pmh))"
+    },
+    {
+        "intent": "What was the reason for prenatal initial visit?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'prenatal initial visit', pmh)))"
+    },
+    {
+        "intent": "Was he diagnosed with viral sinusitis in the past 3 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'viral sinusitis', pmh), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "What is her estimated glomerular filtration rate?",
+        "snippet": "latest(lambda x.has_concept(x, 'estimated glomerular filtration rate', history))"
+    },
+    {
+        "intent": "Was he admitted to Orthopedic department?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted to Orthopedic department', pmh))"
+    },
+    {
+        "intent": "What is the trend of patient's estimated glomerular filtration rate in the past 3 years?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'estimated glomerular filtration rate', history), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "How many times was intrauterine contraceptive device inserted in the past 6 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'intrauterine contraceptive device', history), time_within(x, 'in the past 6 years')))"
+    },
+    {
+        "intent": "Did he get a Tdap vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'Tdap vaccine', history))"
+    },
+    {
+        "intent": "What was the disability rating in 2017?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'disability rating', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "What is the recent Quality Adjusted life years?",
+        "snippet": "latest(lambda x.has_concept(x, 'Quality Adjusted life years', history))"
+    },
+    {
+        "intent": "How long did he have physical therapy?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'physical therapy', pmh)))"
+    },
+    {
+        "intent": "How many times was she screened for allergens?",
+        "snippet": "count(lambda x.has_concept(x, 'screened for allergens', pmh))"
+    },
+    {
+        "intent": "How long has it been since he last took a meningococcal vaccine?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'meningococcal', pmh)))"
+    },
+    {
+        "intent": "When was the last documentation of current medications done?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'documentation of current medications', history)))"
+    },
+    {
+        "intent": "When did she receive the quadrivalent vaccine for HPV?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'quadrivalent vaccine for HPV', pmh)))"
+    },
+    {
+        "intent": "When was his wrist sprain resolved?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'wrist sprain', pmh)))"
+    },
+    {
+        "intent": "How many basic metabolic panel reports does she have?",
+        "snippet": "count(lambda x.has_concept(x, 'basic metabolic panel', history))"
+    },
+    {
+        "intent": "What is his chloride level?",
+        "snippet": "latest(lambda x.has_concept(x, 'chloride level', history))"
+    },
+    {
+        "intent": "How has her BP been?",
+        "snippet": "trend(lambda x.has_concept(x, 'BP', history))"
+    },
+    {
+        "intent": "How many times did she suffer from viral sinusitis in 2011?",
+        "snippet": "count(lambda x.and(has_concept(x, 'viral sinusitis', pmh), time_within(x, 'in 2011')))"
+    },
+    {
+        "intent": "How many times was the lipid panel checked?",
+        "snippet": "count(lambda x.has_concept(x, 'lipid panel', history))"
+    },
+    {
+        "intent": "Did the Hemoglobin A1c exceed 6% after 2016?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'Hemoglobin A1c', history), greater_than(x, '6%'), time_within(x, 'after 2016')))"
+    },
+    {
+        "intent": "How many times did he get vaccinated for Meningococcal vaccine in the last 10 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'Meningococcal vaccine', history), time_within(x, 'in the last 10 years')))"
+    },
+    {
+        "intent": "How many times was basic metabolic panel done in the previous 4 years",
+        "snippet": "count(lambda x.and(has_concept(x, 'basic metabolic panel', history), time_within(x, 'in the previous 4 years')))"
+    },
+    {
+        "intent": "Did she have any deliveries?",
+        "snippet": "delta(lambda x.has_concept(x, 'deliveries', pmh))"
+    },
+    {
+        "intent": "Where was the recent fracture?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'fracture', pmh)))"
+    },
+    {
+        "intent": "What is her temperature?",
+        "snippet": "latest(lambda x.has_concept(x, 'temperature', visit))"
+    },
+    {
+        "intent": "What is the percentage of trunk area which got affected by eczema?",
+        "snippet": "latest(lambda x.has_concept(x, 'percentage of trunk area which got affected by eczema', history))"
+    },
+    {
+        "intent": "Where did she have a laceration?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'laceration', history)))"
+    },
+    {
+        "intent": "When was he last administered meningococcal?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'meningococcal', pmh)))"
+    },
+    {
+        "intent": "What are the details of his outpatient encounters in the last 3 years?",
+        "snippet": "lambda x.and(has_concept(x, 'outpatient encounters', pmh), time_within(x, 'in the last 3 years'))"
+    },
+    {
+        "intent": "Was he ever administered a Td vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'Td vaccine', pmh))"
+    },
+    {
+        "intent": "What is the goal blood glucose level?",
+        "snippet": "latest(lambda x.has_concept(x, 'goal blood glucose level', plan))"
+    },
+    {
+        "intent": "When did the drug addiction therapy start?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'drug addiction therapy', pmh)))"
+    },
+    {
+        "intent": "How many times was basic metabolic panel tested after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'basic metabolic panel', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "When did she start her respiratory therapy?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "When was the last lipid panel test performed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'lipid panel', pmh)))"
+    },
+    {
+        "intent": "How many flu vaccines did he receive after 2015?",
+        "snippet": "count(lambda x.and(has_concept(x, 'flu vaccines', history), time_within(x, 'after 2015')))"
+    },
+    {
+        "intent": "Was he tested for Cladosporium herbarum IgE Ab in serum?",
+        "snippet": "delta(lambda x.has_concept(x, 'Cladosporium herbarum IgE Ab in serum', history))"
+    },
+    {
+        "intent": "When did the stroke happen?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'stroke', pmh)))"
+    },
+    {
+        "intent": "Why was she on the respiratory therapy?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'respiratory therapy', pmh)))"
+    },
+    {
+        "intent": "How many doses of monovalent rotavirus vaccine has she received?",
+        "snippet": "count(lambda x.has_concept(x, 'monovalent rotavirus vaccine', history))"
+    },
+    {
+        "intent": "How is her potassium level?",
+        "snippet": "latest(lambda x.has_concept(x, 'potassium level', history))"
+    },
+    {
+        "intent": "Are there any past throat culture test results?",
+        "snippet": "delta(lambda x.has_concept(x, 'throat culture test', pmh))"
+    },
+    {
+        "intent": "When was she put on the self management plan for Diabetes?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'self management plan for Diabetes', pmh)))"
+    },
+    {
+        "intent": "How many time has she followed up on asthma in the past 3 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'followed up on asthma', history), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "When was his last BP measured?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'BP', history)))"
+    },
+    {
+        "intent": "Is he vaccinated against tetanus?",
+        "snippet": "delta(lambda x.has_concept(x, 'vaccinated against tetanus', history))"
+    },
+    {
+        "intent": "What is the trend of her High density lipoprotein?",
+        "snippet": "trend(lambda x.has_concept(x, 'High density lipoprotein', history))"
+    },
+    {
+        "intent": "Did he have myocardial infarction?",
+        "snippet": "delta(lambda x.has_concept(x, 'myocardial infarction', pmh))"
+    },
+    {
+        "intent": "How many times did the patient have acute bronchitis after 2006?",
+        "snippet": "count(lambda x.and(has_concept(x, 'acute bronchitis', history), time_within(x, 'after 2006')))"
+    },
+    {
+        "intent": "Did she have a bone density scan?",
+        "snippet": "delta(lambda x.has_concept(x, 'bone density scan', pmh))"
+    },
+    {
+        "intent": "How long has it been since he took the Td vaccine?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'Td vaccine', history)))"
+    },
+    {
+        "intent": "What was his least height?",
+        "snippet": "min(lambda x.has_concept(x, 'height', history))"
+    },
+    {
+        "intent": "Was the CO2 in blood below 23?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'CO2 in blood', history), less_than(x, '23')))"
+    },
+    {
+        "intent": "How many times did she visit the outpatient department?",
+        "snippet": "count(lambda x.has_concept(x, 'visit the outpatient department', history))"
+    },
+    {
+        "intent": "What was the reason for his recent encounter for symptom?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'encounter for symptom', pmh)))"
+    },
+    {
+        "intent": "What is her health insurance status?",
+        "snippet": "latest(lambda x.has_concept(x, 'health insurance status', history))"
+    },
+    {
+        "intent": "When was the earliest flu vaccine given?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'flu vaccine', pmh)))"
+    },
+    {
+        "intent": "How many times did he receive the hep b vaccine in 2017?",
+        "snippet": "count(lambda x.and(has_concept(x, 'hep b', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "Where was the fracture?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'fracture', history)))"
+    },
+    {
+        "intent": "Did she ever go through a induced termination of pregnancy?",
+        "snippet": "delta(lambda x.has_concept(x, 'induced termination of pregnancy', pmh))"
+    },
+    {
+        "intent": "When did he start taking flu vaccine?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'flu vaccine', pmh)))"
+    },
+    {
+        "intent": "What is the level of egg white IgE antibody in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'egg white IgE antibody in serum', history))"
+    },
+    {
+        "intent": "Has his calcium level ever been over 10 mg/dl in the past 10 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'calcium level', history), greater_than(x, '10 mg/dl'), time_within(x, 'in the past 10 years')))"
+    },
+    {
+        "intent": "What surgery care management did she receive in 2013?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'surgery care management', pmh), time_within(x, 'in 2013')))"
+    },
+    {
+        "intent": "What is the minimum value of urea nitrogen have we observed?",
+        "snippet": "min(lambda x.has_concept(x, 'urea nitrogen', history))"
+    },
+    {
+        "intent": "What is her lowest Hemoglobin A1c?",
+        "snippet": "min(lambda x.has_concept(x, 'Hemoglobin A1c', history))"
+    },
+    {
+        "intent": "Has he ever been admitted to orthopedic department?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted to orthopedic department', pmh))"
+    },
+    {
+        "intent": "What was the trend of his weight?",
+        "snippet": "trend(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "How many times was she seen for a symptom?",
+        "snippet": "count(lambda x.has_concept(x, 'seen for a symptom', history))"
+    },
+    {
+        "intent": "When was the last dose of Hep A?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Hep A', pmh)))"
+    },
+    {
+        "intent": "How long was the physical therapy given to her?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'physical therapy', pmh)))"
+    },
+    {
+        "intent": "Was any lipid panel test performed in the last 3 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'lipid panel test', pmh), time_within(x, 'in the last 3 years')))"
+    },
+    {
+        "intent": "What are the details of current penicillin order?",
+        "snippet": "latest(lambda x.has_concept(x, 'penicillin', history))"
+    },
+    {
+        "intent": "What are the details of her impacted molars?",
+        "snippet": "latest(lambda x.has_concept(x, 'impacted molars', pmh))"
+    },
+    {
+        "intent": "Was he diagnosed with Otitis media?",
+        "snippet": "delta(lambda x.has_concept(x, 'Otitis media', pmh))"
+    },
+    {
+        "intent": "When was the MMR started?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'MMR', pmh)))"
+    },
+    {
+        "intent": "What is his lowest body weight?",
+        "snippet": "min(lambda x.has_concept(x, 'body weight', history))"
+    },
+    {
+        "intent": "What is the blood pressure in 2010?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'blood pressure', pmh), time_within(x, 'in 2010')))"
+    },
+    {
+        "intent": "When did we start her self care plan?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'self care plan', pmh)))"
+    },
+    {
+        "intent": "What is the value of peanut IgE Ab in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'peanut IgE Ab in serum', history))"
+    },
+    {
+        "intent": "What is the status of dextromethorphan hydrobromide?",
+        "snippet": "latest(lambda x.has_concept(x, 'dextromethorphan hydrobromide', status))"
+    },
+    {
+        "intent": "What does his physical therapy plan contain?",
+        "snippet": "latest(lambda x.has_concept(x, 'physical therapy', plan))"
+    },
+    {
+        "intent": "What was the highest weight for her?",
+        "snippet": "max(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "What time was the US standard certificate of death issued?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'US standard certificate of death', history)))"
+    },
+    {
+        "intent": "How low did his weight go?",
+        "snippet": "min(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "How many times did she take her flu shots in the last 3 years?",
+        "snippet": "count(lambda x.and(has_concept(x, 'flu shots', history), time_within(x, 'in the last 3 years')))"
+    },
+    {
+        "intent": "How long did the procedure for measuring respiratory function go on?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'procedure for measuring respiratory function', pmh)))"
+    },
+    {
+        "intent": "Which year did the patient initiate an encounter?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'patient initiate an encounter', pmh)))"
+    },
+    {
+        "intent": "How are the hemoglobin A1c levels changing for patient in the past 3 years?",
+        "snippet": "trend(lambda x.and(has_concept(x, 'hemoglobin A1c levels', history), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "Is he putting on body weight?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'body weight', history))"
+    },
+    {
+        "intent": "When was the first DTaP vaccine given?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'DTaP vaccine', pmh)))"
+    },
+    {
+        "intent": "Did she have an induced termination of pregnancy?",
+        "snippet": "delta(lambda x.has_concept(x, 'induced termination of pregnancy', pmh))"
+    },
+    {
+        "intent": "What was the dose for amoxicillin?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'amoxicillin', pmh)))"
+    },
+    {
+        "intent": "When did she last receive her MMR vaccine?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'MMR vaccine', pmh)))"
+    },
+    {
+        "intent": "How many times has the subcutaneous contraceptive been inserted?",
+        "snippet": "count(lambda x.has_concept(x, 'subcutaneous contraceptive been inserted', history))"
+    },
+    {
+        "intent": "Was the Body mass index greater than 25 in the last 8 years?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'Body mass index', history), greater_than(x, '25'), time_within(x, 'in the last 8 years')))"
+    },
+    {
+        "intent": "Is the IgE Ab in serum for cat dander going up?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'IgE Ab in serum for cat dander', history))"
+    },
+    {
+        "intent": "When was the musculoskeletal care started?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'musculoskeletal care', pmh)))"
+    },
+    {
+        "intent": "Did she get flu shots after 2012?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'flu shots', history), time_within(x, 'after 2012')))"
+    },
+    {
+        "intent": "Is the second degree burn healed?",
+        "snippet": "is_healed(latest(lambda x.has_concept(x, 'second degree burn', history)))"
+    },
+    {
+        "intent": "Is there a goal for her hemoglobin A1c level?",
+        "snippet": "delta(lambda x.has_concept(x, 'goal for her hemoglobin A1c level', plan))"
+    },
+    {
+        "intent": "What is the count of fracture care after 2010?",
+        "snippet": "count(lambda x.and(has_concept(x, 'fracture care', history), time_within(x, 'after 2010')))"
+    },
+    {
+        "intent": "Why was a burn care plan created for the patient?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'burn care plan', pmh)))"
+    },
+    {
+        "intent": "How many times has he followed up on his asthma?",
+        "snippet": "count(lambda x.has_concept(x, 'followed up on his asthma', history))"
+    },
+    {
+        "intent": "Did her high density lipoprotein go above 70 in the past year?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'high density lipoprotein', history), greater_than(x, '70'), time_within(x, 'in the past year')))"
+    },
+    {
+        "intent": "Was she ever on acetaminophen?",
+        "snippet": "delta(lambda x.has_concept(x, 'acetaminophen', pmh))"
+    },
+    {
+        "intent": "How is the level of cat dander IgE antibody in serum?",
+        "snippet": "latest(lambda x.has_concept(x, 'cat dander IgE antibody in serum', history))"
+    },
+    {
+        "intent": "Did she get the flu vaccine this year?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'flu vaccine', pmh), time_within(x, 'this year')))"
+    },
+    {
+        "intent": "What is the dose of latest Penicillin V Potassium?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Penicillin V Potassium', history)))"
+    },
+    {
+        "intent": "How many flu vaccines are administered after 2014?",
+        "snippet": "count(lambda x.and(has_concept(x, 'flu vaccines', history), time_within(x, 'after 2014')))"
+    },
+    {
+        "intent": "How many doses of IPV was he given in 2017?",
+        "snippet": "count(lambda x.and(has_concept(x, 'IPV', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "Has he received the zoster vaccine this year?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'zoster vaccine', pmh), time_within(x, 'this year')))"
+    },
+    {
+        "intent": "Did he have any wound care done?",
+        "snippet": "delta(lambda x.has_concept(x, 'wound care', history))"
+    },
+    {
+        "intent": "When was the Intrauterine device replaced?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Intrauterine device replaced', pmh)))"
+    },
+    {
+        "intent": "Has his hemoglobin A1c ever been less than 6?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'hemoglobin A1c', history), less_than(x, '6')))"
+    },
+    {
+        "intent": "Has the blood glucose been greater than 90 mg/dl?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'blood glucose', history), greater_than(x, '90 mg/dl')))"
+    },
+    {
+        "intent": "What was the dose for penicillin V potassium?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'penicillin V potassium', history)))"
+    },
+    {
+        "intent": "When was the last time he had Acetaminophen?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Acetaminophen', pmh)))"
+    },
+    {
+        "intent": "What was the lowest estimated glomerular filtration rate in the last 2 years?",
+        "snippet": "min(lambda x.and(has_concept(x, 'estimated glomerular filtration rate', history), time_within(x, 'in the last 2 years')))"
+    },
+    {
+        "intent": "What is his latest estimated glomerular filtration rate?",
+        "snippet": "latest(lambda x.has_concept(x, 'estimated glomerular filtration rate', history))"
+    },
+    {
+        "intent": "How often was documentation of current medications done?",
+        "snippet": "count(lambda x.has_concept(x, 'documentation of current medications', history))"
+    },
+    {
+        "intent": "Did he get immunization for meningococcal disease?",
+        "snippet": "delta(lambda x.has_concept(x, 'immunization for meningococcal disease', pmh))"
+    },
+    {
+        "intent": "How many prenatal visits did she have?",
+        "snippet": "count(lambda x.has_concept(x, 'prenatal visits', history))"
+    },
+    {
+        "intent": "How low has the hemoglobin A1c been in the past 3 years?",
+        "snippet": "min(lambda x.and(has_concept(x, 'hemoglobin A1c', history), time_within(x, 'in the past 3 years')))"
+    },
+    {
+        "intent": "What is her BP?",
+        "snippet": "latest(lambda x.has_concept(x, 'BP', visit))"
+    },
+    {
+        "intent": "When was the total cholesterol tested?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'total cholesterol', pmh)))"
+    },
+    {
+        "intent": "Where was the whiplash injury?",
+        "snippet": "location(latest(lambda x.has_concept(x, 'whiplash injury', pmh)))"
+    },
+    {
+        "intent": "Does this patient have any allergy to fish?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergy to fish', status))"
+    },
+    {
+        "intent": "What are the particulars of her appendicitis?",
+        "snippet": "latest(lambda x.has_concept(x, 'appendicitis', history))"
+    },
+    {
+        "intent": "When was he last tested for Blood pressure?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Blood pressure', pmh)))"
+    },
+    {
+        "intent": "Why was she on musculoskeletal care?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'musculoskeletal care', pmh)))"
+    },
+    {
+        "intent": "When was the first Hep B vaccine administered?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'Hep B vaccine', pmh)))"
+    },
+    {
+        "intent": "How many times has she received the DTaP vaccine?",
+        "snippet": "count(lambda x.has_concept(x, 'DTaP vaccine', history))"
+    },
+    {
+        "intent": "How many times did she have obstetric emergency admission?",
+        "snippet": "count(lambda x.has_concept(x, 'obstetric emergency admission', pmh))"
+    },
+    {
+        "intent": "What is his latest blood pressure?",
+        "snippet": "latest(lambda x.has_concept(x, 'blood pressure', history))"
+    },
+    {
+        "intent": "What is the status of his naproxen medication?",
+        "snippet": "latest(lambda x.has_concept(x, 'naproxen medication', status))"
+    },
+    {
+        "intent": "Is she allergic to bee venom?",
+        "snippet": "delta(lambda x.has_concept(x, 'allergic to bee venom', status))"
+    },
+    {
+        "intent": "How is his HDL?",
+        "snippet": "latest(lambda x.has_concept(x, 'HDL', history))"
+    },
+    {
+        "intent": "When was she ordered the hydrocortisone topical cream?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'hydrocortisone topical cream', pmh)))"
+    },
+    {
+        "intent": "What year did he start flu vaccine?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'flu vaccine', pmh)))"
+    },
+    {
+        "intent": "Was she tested for t-score?",
+        "snippet": "delta(lambda x.has_concept(x, 't-score', pmh))"
+    },
+    {
+        "intent": "What is the dose of Razadyne?",
+        "snippet": "dose(latest(lambda x.has_concept(x, 'Razadyne', history)))"
+    },
+    {
+        "intent": "Was he admitted in emergency room?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted in emergency room', pmh))"
+    },
+    {
+        "intent": "When was the last time a subcutaneous contraceptive was inserted?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'subcutaneous contraceptive was inserted', pmh)))"
+    },
+    {
+        "intent": "How often does she take her flu shots?",
+        "snippet": "count(lambda x.has_concept(x, 'flu shots', history))"
+    },
+    {
+        "intent": "What self care plan is he on?",
+        "snippet": "latest(lambda x.has_concept(x, 'self care plan', history))"
+    },
+    {
+        "intent": "Was there any diagnosis for chronic sinusitis?",
+        "snippet": "delta(lambda x.has_concept(x, 'chronic sinusitis', pmh))"
+    },
+    {
+        "intent": "How many times were his medications documented?",
+        "snippet": "count(lambda x.has_concept(x, 'medications documented', history))"
+    },
+    {
+        "intent": "Was he ever administered a Td vaccine?",
+        "snippet": "delta(lambda x.has_concept(x, 'Td vaccine', pmh))"
+    },
+    {
+        "intent": "When was the first time he visited in an outpatient setting?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'visited in an outpatient setting', pmh)))"
+    },
+    {
+        "intent": "Does he have nonproliferative diabetic retinopathy due to type 2 diabetes mellitus?",
+        "snippet": "delta(lambda x.has_concept(x, 'nonproliferative diabetic retinopathy due to type 2 diabetes mellitus', history))"
+    },
+    {
+        "intent": "What was the time of death?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'death', history)))"
+    },
+    {
+        "intent": "When was the last allergy screening test performed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'allergy screening test', pmh)))"
+    },
+    {
+        "intent": "When was her contraceptive intrauterine device replaced?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'contraceptive intrauterine device replaced', pmh)))"
+    },
+    {
+        "intent": "What time was the Throat culture?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'Throat culture', history)))"
+    },
+    {
+        "intent": "When did he start taking the metformin hydrochloride extended release oral tablets?",
+        "snippet": "time(earliest(lambda x.has_concept(x, 'metformin hydrochloride extended release oral tablets', pmh)))"
+    },
+    {
+        "intent": "Did she have colonoscopy?",
+        "snippet": "delta(lambda x.has_concept(x, 'colonoscopy', pmh))"
+    },
+    {
+        "intent": "Has his carbon dioxide level ever been greater than 25 mmol/l?",
+        "snippet": "delta(lambda x.and(has_concept(x, 'carbon dioxide level', history), greater_than(x, '25 mmol/l')))"
+    },
+    {
+        "intent": "Are the honey bee IgE antibodies in serum decreased?",
+        "snippet": "is_decreasing(lambda x.has_concept(x, 'honey bee IgE antibodies in serum', history))"
+    },
+    {
+        "intent": "When was a diagnosis of non-small cell carcinoma made?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'non-small cell carcinoma', pmh)))"
+    },
+    {
+        "intent": "When did he die?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'die', history)))"
+    },
+    {
+        "intent": "When was his last outpatient encounter?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'outpatient encounter', pmh)))"
+    },
+    {
+        "intent": "What was the Hemoglobin A1c in 2017?",
+        "snippet": "latest(lambda x.and(has_concept(x, 'Hemoglobin A1c', pmh), time_within(x, 'in 2017')))"
+    },
+    {
+        "intent": "Did he undergo the measurement of respiratory function?",
+        "snippet": "delta(lambda x.has_concept(x, 'measurement of respiratory function', history))"
+    },
+    {
+        "intent": "How many times was the Augmentin prescribed to him?",
+        "snippet": "count(lambda x.has_concept(x, 'Augmentin', history))"
+    },
+    {
+        "intent": "How much Penicillin was first given?",
+        "snippet": "dose(earliest(lambda x.has_concept(x, 'Penicillin', pmh)))"
+    },
+    {
+        "intent": "Why was the angina self management plan started?",
+        "snippet": "reason(latest(lambda x.has_concept(x, 'angina self management plan', pmh)))"
+    },
+    {
+        "intent": "How long did the antepartum eclampsia go for?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'antepartum eclampsia', pmh)))"
+    },
+    {
+        "intent": "How long has she been hypertensive?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'hypertensive', history)))"
+    },
+    {
+        "intent": "What percentage area of bilateral lower extremity got affected by eczema?",
+        "snippet": "latest(lambda x.has_concept(x, 'percentage area of bilateral lower extremity got affected by eczema', history))"
+    },
+    {
+        "intent": "Was he vaccinated for flu?",
+        "snippet": "delta(lambda x.has_concept(x, 'vaccinated for flu', pmh))"
+    },
+    {
+        "intent": "When was his allergy to mould diagnosed?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'allergy to mould', pmh)))"
+    },
+    {
+        "intent": "What is the trend in Body Mass Index?",
+        "snippet": "trend(lambda x.has_concept(x, 'Body Mass Index', history))"
+    },
+    {
+        "intent": "How long has she been on jolivette?",
+        "snippet": "duration(latest(lambda x.has_concept(x, 'jolivette', pmh)))"
+    },
+    {
+        "intent": "Is he gaining weight?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'weight', history))"
+    },
+    {
+        "intent": "What is her LDL Cholesterol?",
+        "snippet": "latest(lambda x.has_concept(x, 'LDL Cholesterol', history))"
+    },
+    {
+        "intent": "What is the trend of white oak IgE antibody in serum?",
+        "snippet": "trend(lambda x.has_concept(x, 'white oak IgE antibody in serum', history))"
+    },
+    {
+        "intent": "What is the least GFR?",
+        "snippet": "min(lambda x.has_concept(x, 'GFR', history))"
+    },
+    {
+        "intent": "What was the highest High Density Lipoprotein?",
+        "snippet": "max(lambda x.has_concept(x, 'High Density Lipoprotein', history))"
+    },
+    {
+        "intent": "Did he ever sprain his ankle?",
+        "snippet": "delta(lambda x.has_concept(x, 'sprain his ankle', pmh))"
+    },
+    {
+        "intent": "When was the last time his hemoglobin A1c went above 6%?",
+        "snippet": "time(latest(lambda x.and(has_concept(x, 'hemoglobin A1c', pmh), greater_than(x, '6%'))))"
+    },
+    {
+        "intent": "Was he ever admitted to an ER?",
+        "snippet": "delta(lambda x.has_concept(x, 'admitted to an ER', pmh))"
+    },
+    {
+        "intent": "Has her microalbumin creatinine ratio increased?",
+        "snippet": "is_increasing(lambda x.has_concept(x, 'microalbumin creatinine ratio', history))"
+    },
+    {
+        "intent": "When was the onset of her diabetes?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'diabetes', pmh)))"
+    },
+    {
+        "intent": "How is the High Density lipoprotein changing over the years?",
+        "snippet": "trend(lambda x.has_concept(x, 'High Density lipoprotein', history))"
+    },
+    {
+        "intent": "When was his bone immobilized?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'bone immobilized', pmh)))"
+    },
+    {
+        "intent": "When was the last body mass index measured?",
+        "snippet": "time(latest(lambda x.has_concept(x, 'body mass index', pmh)))"
+    }
+]

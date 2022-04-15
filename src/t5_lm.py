@@ -10,10 +10,10 @@ from transformers import (
     get_linear_schedule_with_warmup, T5ForConditionalGeneration, T5Tokenizer, T5Config
 )
 
-from t5_experiments.data_processing.multi_task_batch_scheduler import BatchSchedulerSampler
-from t5_experiments.data_processing.processor import load_and_cache_examples
-from t5_experiments.data_processing.utils import get_encoded_code_tokens
-from t5_experiments.eval.conala_eval import calculate_bleu_from_lists
+from data_processing.multi_task_batch_scheduler import BatchSchedulerSampler
+from data_processing.processor import load_and_cache_examples
+from data_processing.utils import get_encoded_code_tokens
+from eval.conala_eval import calculate_bleu_from_lists
 
 logger = logging.getLogger(__name__)
 
@@ -231,7 +231,7 @@ class T5LMClassifier:
                             preds = self._predict(eval_dataset=val_dataset,
                                                   per_gpu_eval_batch_size=per_gpu_train_batch_size,
                                                   model=model,
-                                                  max_generated_tokens=48)
+                                                  max_generated_tokens=256)
                             labels = [' '.join(get_encoded_code_tokens(label)) for label in val_labels]
                             bleu, exact = calculate_bleu_from_lists(gold_texts=labels,
                                                            predicted_texts=preds)

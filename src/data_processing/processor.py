@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import TensorDataset
 from transformers import InputExample
 
-from t5_experiments.data_processing.utils import get_encoded_code_tokens
+from data_processing.utils import get_encoded_code_tokens
 
 
 def load_and_cache_examples(data_file, local_rank, max_seq_length, tokenizer, evaluate=False,
@@ -34,7 +34,7 @@ def load_and_cache_examples(data_file, local_rank, max_seq_length, tokenizer, ev
         [ex.text_a for ex in examples],
         max_length=max_seq_length,
         pad_to_max_length=True,
-        return_tensors="pt",
+        return_tensors="pt"
     )
     # tokenize targets
     tokenized_targets = tokenizer.batch_encode_plus(

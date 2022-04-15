@@ -7,8 +7,9 @@ import re
 import token
 import tokenize
 import argparse
+import random
 
-from t5_experiments.eval import bleu_score
+from eval import bleu_score
 
 # Main function for CodaLab evaluation purposes
 def main():
@@ -139,8 +140,14 @@ def evaluate_bleu(reference_list, hypothesis_list):
 
 
 def calculate_bleu_from_lists(gold_texts, predicted_texts):
-    for g, p in zip(predicted_texts[:5], gold_texts[:5]):
-        print(g, '||', p)
+    compare = [ (p, g) for p, g in zip(predicted_texts, gold_texts) ]
+    random.shuffle(compare)
+
+    print('\n')
+    for p, g in compare[:20]:
+        print(f'Gold: "{g}"')
+        print(f'Pred: "{p}"')
+        print()
     c_hyp = [tokenize_for_bleu_eval(s) for s in predicted_texts]
     c_ref = [tokenize_for_bleu_eval(s) for s in gold_texts]
     bleu_tup = bleu_score.compute_bleu([[x] for x in c_ref], c_hyp, smooth=False)
