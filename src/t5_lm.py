@@ -12,7 +12,7 @@ from transformers import (
 
 from data_processing.multi_task_batch_scheduler import BatchSchedulerSampler
 from data_processing.processor import load_and_cache_examples
-from data_processing.utils import get_encoded_code_tokens
+from data_processing.utils import get_encoded_code_tokens, read_labels
 from eval.conala_eval import calculate_bleu_from_lists
 
 logger = logging.getLogger(__name__)
@@ -187,7 +187,7 @@ class T5LMClassifier:
         train_iterator = trange(
             epochs_trained, int(num_train_epochs), desc="Epoch", disable=self.local_rank not in [-1, 0]
         )
-        save_steps = 500#len(train_dataset) // (per_gpu_train_batch_size * gradient_accumulation_steps* self.n_gpu)
+        save_steps = len(train_dataset) # (per_gpu_train_batch_size * gradient_accumulation_steps* self.n_gpu)
         for _ in train_iterator:
             epoch_iterator = tqdm(train_dataloader, desc="Iteration", disable=self.local_rank not in [-1, 0])
             for step, batch in enumerate(epoch_iterator):
@@ -232,8 +232,9 @@ class T5LMClassifier:
                                                   per_gpu_eval_batch_size=per_gpu_train_batch_size,
                                                   model=model,
                                                   max_generated_tokens=256)
+                            inputs = read_labels(dev_file, tag='intent')
                             labels = [' '.join(get_encoded_code_tokens(label)) for label in val_labels]
-                            bleu, exact = calculate_bleu_from_lists(gold_texts=labels,
+                            bleu, exact = calculate_bleu_from_lists(inputs, gold_texts=labels,
                                                            predicted_texts=preds)
                             print(exact, bleu)
                             if bleu > val_bleu:

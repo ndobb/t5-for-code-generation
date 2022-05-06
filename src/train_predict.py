@@ -46,11 +46,12 @@ def evaluate(test_file, trained_models_dir, sequence_length,
     preds = _classifier.predict(test_file=test_file,
                                 per_gpu_eval_batch_size=per_gpu_eval_batch_size,
                                 max_generated_tokens=sequence_length)
+    inputs = read_labels(test_file, tag='intent')
     labels = read_labels(test_file, tag='snippet')
     labels = [l.lower() for l in labels]
     preds = [p.lower() for p in preds]
     labels = [' '.join(get_encoded_code_tokens(label)) for label in labels]
-    eval_results = calculate_bleu_from_lists(gold_texts=labels, predicted_texts=preds)
+    eval_results = calculate_bleu_from_lists(inputs, gold_texts=labels, predicted_texts=preds)
     print(eval_results)
     return eval_results
 

@@ -139,12 +139,13 @@ def evaluate_bleu(reference_list, hypothesis_list):
     return bleu_score.compute_bleu(reference_list, b, smooth=False)
 
 
-def calculate_bleu_from_lists(gold_texts, predicted_texts):
-    compare = [ (p, g) for p, g in zip(predicted_texts, gold_texts) ]
+def calculate_bleu_from_lists(inputs, gold_texts, predicted_texts):
+    compare = [ (i, p, g) for i, p, g in zip(inputs, predicted_texts, gold_texts) ]
     random.shuffle(compare)
 
     print('\n')
-    for p, g in compare[:20]:
+    for i, p, g in compare[:20]:
+        print(f'Inpt: "{i}"')
         print(f'Gold: "{g}"')
         print(f'Pred: "{p}"')
         print()

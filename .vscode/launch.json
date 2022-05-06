@@ -12,10 +12,26 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--training-file", "./data/FHIR-QA-Dataset-train.json", 
-                "--validation-file", "./data/FHIR-QA-Dataset-test.json",
-                "--language-model", "t5-small",
-                "--model-dir", "./output"
+                //"--training-file", "./data/FHIR-QA-Dataset-train.json", 
+                //"--validation-file", "./data/FHIR-QA-Dataset-test.json",
+                //"--training-file", "./data/lct_train.json", 
+                //"--validation-file", "./data/lct_test.json",
+                //"--language-model", "t5-small",
+                //"--model-dir", "./output"
+                "--model_name_or_path", "t5-base",
+                //"--do_train",
+                //"--de_predict",
+                "--source_lang", "intent",
+                "--target_lang", "snippet",
+                "--source_prefix", "code",
+                "--train_file", "./data/lct_seq2seq/train.json",
+                "--validation_file", "./data/lct_seq2seq/test.json",
+                "--dataset_config_name", "lct",
+                "--output_dir", "/tmp/tst-translation",
+                "--per_device_train_batch_size=4",
+                "--per_device_eval_batch_size=4",
+                //"--overwrite_output_dir",
+                "--predict_with_generate=1"
             ]
         }
     ]

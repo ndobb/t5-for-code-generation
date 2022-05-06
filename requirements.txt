@@ -1,7 +1,12 @@
 pandas
-transformers==3.1.0
+datasets
+transformers
 torch
 sklearn
 nltk
 astor
 sentencepiece==0.1.91
+sacrebleu
+accelerate
+protobuf
+sty==1.0.0rc1
