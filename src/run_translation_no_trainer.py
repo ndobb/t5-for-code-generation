@@ -211,6 +211,7 @@ def parse_args():
     )
     parser.add_argument("--weight_decay", type=float, default=0.0, help="Weight decay to use.")
     parser.add_argument("--num_train_epochs", type=int, default=20, help="Total number of training epochs to perform.")
+    parser.add_argument("--patience", type=int, default=10, help="Total number of training epochs to wait for an eval score improvement.")
     parser.add_argument(
         "--max_train_steps",
         type=int,
@@ -242,7 +243,6 @@ def parse_args():
         help="Model type to use if training from scratch.",
         choices=MODEL_TYPES,
     )
-    parser.add_argument("--push_to_hub", action="store_true", help="Whether or not to push the model to the Hub.")
     parser.add_argument(
         "--hub_model_id", type=str, help="The name of the repository to keep in sync with the local `output_dir`."
     )
@@ -264,6 +264,11 @@ def parse_args():
         action="store_true",
         help="Whether to load in all available experiment trackers from the environment and use them for logging.",
     )
+    parser.add_argument(
+        "--validation_print_num",
+        default=3,
+        help="Number of predicted examples to print after each epoch"
+    )
     try:
         args = parser.parse_args()
     except Exception as ex:
@@ -281,9 +286,6 @@ def parse_args():
     if args.validation_file is not None:
         extension = args.validation_file.split(".")[-1]
         assert extension in ["csv", "json"], "`validation_file` should be a csv or a json file."
-
-    if args.push_to_hub:
-        assert args.output_dir is not None, "Need an `output_dir` to create a repo when `--push_to_hub` is passed."
 
     return args
 
@@ -316,19 +318,7 @@ def main():
 
     # Handle the repository creation
     if accelerator.is_main_process:
-        if args.push_to_hub:
-            if args.hub_model_id is None:
-                repo_name = get_full_repo_name(Path(args.output_dir).name, token=args.hub_token)
-            else:
-                repo_name = args.hub_model_id
-            repo = Repository(args.output_dir, clone_from=repo_name)
-
-            with open(os.path.join(args.output_dir, ".gitignore"), "w+") as gitignore:
-                if "step_*" not in gitignore:
-                    gitignore.write("step_*\n")
-                if "epoch_*" not in gitignore:
-                    gitignore.write("epoch_*\n")
-        elif args.output_dir is not None:
+        if args.output_dir is not None:
             os.makedirs(args.output_dir, exist_ok=True)
     accelerator.wait_for_everyone()
 
@@ -437,7 +427,7 @@ def main():
     def preprocess_function(examples):
         inputs = [ex for ex in examples.data[source_lang]]
         targets = [ex for ex in examples.data[target_lang]]
-        inputs = [prefix + inp for inp in inputs]
+        #inputs = [prefix + inp for inp in inputs]
         model_inputs = tokenizer(inputs, max_length=args.max_source_length, padding=padding, truncation=True)
 
         # Setup the tokenizer for targets
@@ -547,6 +537,9 @@ def main():
         accelerator.init_trackers("translation_no_trainer", experiment_config)
 
     metric = load_metric("sacrebleu")
+    best_bleu = 0.0
+    best_preds = []
+    epochs_not_improved = 0
 
     def postprocess_text(preds, labels):
         preds = [pred.strip() for pred in preds]
@@ -676,34 +669,45 @@ def main():
                     predicted.append([ pred_batch, gold_batch[0] ])
                 metric.add_batch(predictions=decoded_preds, references=decoded_labels)
         eval_metric = metric.compute()
-        logger.info({"bleu": eval_metric["score"]})
 
         compare = [ (p,g) for p,g in zip(gold_eval, predicted) ]
         random.shuffle(compare)
 
-        for src, (pred, gold) in compare[:20]:
+        print('\n', flush=True)
+        for src, (pred, gold) in compare[:args.validation_print_num]:
             inpt = src[args.source_lang]
-            print(f'Inpt: "{inpt}"')
-            print(f'Gold: {fg.yellow}"{gold}"{fg.rs}')
-            print(f'Pred: {fg.cyan}"{pred}"{fg.rs}')
-            print()
+            print(f'Inpt: "{inpt}"', flush=True)
+            print(f'Gold: {fg.yellow}"{gold}"{fg.rs}', flush=True)
+            print(f'Pred: {fg.cyan}"{pred}"{fg.rs}', flush=True)
+            print('', flush=True)
 
-        if args.with_tracking:
-            accelerator.log(
-                {"blue": eval_metric["score"], "train_loss": total_loss, "epoch": epoch, "step": completed_steps},
-            )
+        accelerator.wait_for_everyone()
+        unwrapped_model = accelerator.unwrap_model(model)
 
-        if args.push_to_hub and epoch < args.num_train_epochs - 1:
-            accelerator.wait_for_everyone()
-            unwrapped_model = accelerator.unwrap_model(model)
+        if eval_metric["score"] > best_bleu:
+            epochs_not_improved = 0
+            best_bleu = eval_metric["score"]
+            print(f'Bleu score improved: {best_bleu}', flush=True)
+
+            best_preds = []
+            for src, (pred, gold) in compare:
+                inpt = src[args.source_lang]
+                best_preds.append({ 'input': inpt, 'gold': gold, 'pred': pred })
+
             unwrapped_model.save_pretrained(
                 args.output_dir, is_main_process=accelerator.is_main_process, save_function=accelerator.save
             )
             if accelerator.is_main_process:
                 tokenizer.save_pretrained(args.output_dir)
-                repo.push_to_hub(
-                    commit_message=f"Training in progress epoch {epoch}", blocking=False, auto_lfs_prune=True
-                )
+        else:
+            print(f'Bleu score did not improve (best is {best_bleu})', flush=True)
+            epochs_not_improved += 1
+
+            if epochs_not_improved >= args.patience:
+                logger.info(f'Bleu score has not improved in {epochs_not_improved} epochs, early stop!')
+                break
+
+        logger.info({"bleu": eval_metric["score"]})
 
         if args.checkpointing_steps == "epoch":
             output_dir = f"epoch_{epoch}"
@@ -719,13 +723,14 @@ def main():
         )
         if accelerator.is_main_process:
             tokenizer.save_pretrained(args.output_dir)
-            if args.push_to_hub:
-                repo.push_to_hub(commit_message="End of training", auto_lfs_prune=True)
-        with open(os.path.join(args.output_dir, "all_results.json"), "w") as f:
-            json.dump({"eval_bleu": eval_metric["score"]}, f)
+        with open(os.path.join(args.output_dir, "best_score.json"), "w") as f:
+            json.dump({"eval_bleu": best_bleu}, f)
+        with open(os.path.join(args.output_dir, "best_preds.json"), "w") as f:
+            json.dump(best_preds, f, indent=4)
 
 
 if __name__ == "__main__":
 
     main()
+
 
