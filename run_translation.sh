@@ -1,3 +1,4 @@
+
 for d in `ls data/lct_seq2seq`; do
    python3 src/run_translation_no_trainer.py \
       --model_name_or_path t5-base \
@@ -13,3 +14,4 @@ for d in `ls data/lct_seq2seq`; do
       --predict_with_generate=1
 done
 
+python3 src/eval/report.py

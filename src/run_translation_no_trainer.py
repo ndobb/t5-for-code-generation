@@ -210,8 +210,8 @@ def parse_args():
         help="Initial learning rate (after the potential warmup period) to use.",
     )
     parser.add_argument("--weight_decay", type=float, default=0.0, help="Weight decay to use.")
-    parser.add_argument("--num_train_epochs", type=int, default=20, help="Total number of training epochs to perform.")
-    parser.add_argument("--patience", type=int, default=10, help="Total number of training epochs to wait for an eval score improvement.")
+    parser.add_argument("--num_train_epochs", type=int, default=50, help="Total number of training epochs to perform.")
+    parser.add_argument("--patience", type=int, default=10, help="Total number of training epochs to wait for an eval score improvement before stopping.")
     parser.add_argument(
         "--max_train_steps",
         type=int,
@@ -706,6 +706,8 @@ def main():
             if epochs_not_improved >= args.patience:
                 logger.info(f'Bleu score has not improved in {epochs_not_improved} epochs, early stop!')
                 break
+            else:
+                print(f'Bleu score has not improved in {epochs_not_improved} epochs')
 
         logger.info({"bleu": eval_metric["score"]})
 
@@ -732,5 +734,3 @@ def main():
 if __name__ == "__main__":
 
     main()
-
-
